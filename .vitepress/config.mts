@@ -26,7 +26,6 @@ export default defineConfig({
     socialLinks: [
       { icon: 'linkedin', link: 'https://www.linkedin.com/in/simonpangan/' },
       { icon: 'github', link: 'https://github.com/simonpangan' },
-      { icon: 'gmail', link: "mailto:simonjoseph.pangan@gmail.com" },
     ]
   }
 })
