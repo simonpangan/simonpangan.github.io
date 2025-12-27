@@ -26,6 +26,10 @@ export default defineConfig({
     socialLinks: [
       { icon: 'linkedin', link: 'https://www.linkedin.com/in/simonpangan/' },
       { icon: 'github', link: 'https://github.com/simonpangan' },
-    ]
+    ],
+
+    footer: {
+      copyright: 'Copyright © 2025-present <a href="https://github.com/simonpangan">Simon Pangan</a>'
+    }
   }
 })
