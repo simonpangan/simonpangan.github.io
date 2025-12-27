@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "My Awesome Project",
+  title: "Simon Pangan • Laravel & PHP Developer • Manila, Philippines",
   description: "A VitePress Site",
   base: '/',
   themeConfig: {
