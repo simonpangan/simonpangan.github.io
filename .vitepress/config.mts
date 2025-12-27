@@ -1,13 +1,11 @@
 import { defineConfig } from 'vitepress'
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Simon Pangan • Laravel & PHP Developer • Manila, Philippines",
   description: "A VitePress Site",
   base: '/',
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Examples', link: '/markdown-examples' }
