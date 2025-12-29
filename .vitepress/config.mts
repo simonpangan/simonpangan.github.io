@@ -27,7 +27,7 @@ export default defineConfig({
     ],
 
     footer: {
-      copyright: 'Copyright © 2025-present <a href="https://github.com/simonpangan">Simon Pangan</a>'
+      copyright: 'Copyright © 2023 - Present | <a href="https://github.com/simonpangan">Simon Pangan</a>'
     }
   }
 })
