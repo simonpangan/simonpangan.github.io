@@ -32,7 +32,7 @@
 
 @font-face {
   font-family: "Quicksand";
-  src: url("./assets/fonts/Quicksand-Variable.ttf") format("truetype");
+  src: url("/assets/fonts/Quicksand-Variable.ttf") format("truetype");
 }
 
 :root {
