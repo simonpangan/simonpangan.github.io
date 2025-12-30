@@ -21,4 +21,22 @@ export default defineConfig({
     }
   },
   cleanUrls: true,
+  transformHead({assets}) {
+     return [preloadFonts(assets)]
+  }
 })
+
+function preloadFonts(assets) {
+  const quicksandFile = assets.find(file => /Quicksand-Variable\.[\w-]+\.ttf/.test(file))
+
+  return [
+    'link',
+    {
+      rel: 'preload',
+      href: quicksandFile,
+      as: 'font',
+      type: 'font/ttf',
+      crossorigin: ''
+    }
+  ];
+}
