@@ -6,6 +6,7 @@ export default defineConfig({
   base: '/',
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   themeConfig: {
+    siteTitle: false,
     nav: [
       { text: 'Home', link: '/' },
     ],
