@@ -1,3 +1,4 @@
+import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
@@ -23,6 +24,18 @@ export default defineConfig({
   cleanUrls: true,
   transformHead({assets}) {
      return [preloadFonts(assets)]
+  },
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^.*\/VPHero\.vue$/,
+          replacement: fileURLToPath(
+              new URL('./theme/components/CustomVPHero.vue', import.meta.url)
+          )
+        }
+      ]
+    }
   }
 })
 
