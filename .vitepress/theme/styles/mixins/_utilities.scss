@@ -19,7 +19,17 @@
 
     @each $key, $value in $values {
       .#{$class}-#{$key} {
-        #{$property}: #{$value};
+        // Some utilities affect more than one CSS property
+        // Example: mx → margin-right and margin-left
+        @if type-of($property) == list {
+          // Apply the same value to each property
+          @each $single-property in $property {
+            #{$single-property}: #{$value};
+          }
+        } @else {
+          // Normal case: only one CSS property
+          #{$property}: #{$value};
+        }
       }
     }
   }
