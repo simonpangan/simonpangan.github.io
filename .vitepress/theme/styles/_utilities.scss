@@ -14,12 +14,12 @@ $utilities: (
   // scss-docs-end utils-text
   // Margin utilities
   // scss-docs-start utils-spacing
-  //"margin-x": (
-  //  responsive: true,
-  //  property: margin-right margin-left,
-  //  class: mx,
-  //  values: map-merge($spacers, (auto: auto))
-  //),
+  "margin-x": (
+    responsive: true,
+    property: margin-right margin-left,
+    class: mx,
+    values: map-merge($spacers, (auto: auto))
+  ),
   // scss-docs-end utils-spacing
   // Flex utilities
   // scss-docs-start utils-flex
