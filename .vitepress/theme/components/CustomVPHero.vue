@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import { VPImage } from 'vitepress/theme'
-</script>
-
 <template>
   <div class="VPHero">
     <div class="container">
@@ -21,6 +17,11 @@ import { VPImage } from 'vitepress/theme'
         </h1>
         <p class="description">Developing engaging and performant web apps with Laravel & PHP</p>
         <p class="location">Manila, Philippines</p>
+    <div class="container mx-auto">
+      <div class="main text-center">
+        <h1 class="name clip">Simon Pangan</h1>
+        <div class="description">Developing engaging and performant web apps with Laravel & PHP</div>
+        <div class="location">Manila, Philippines</div>
       </div>
     </div>
   </div>
@@ -69,26 +70,6 @@ import { VPImage } from 'vitepress/theme'
     //width: calc((100% / 3) * 2);
     //background: orange;
     //max-width: 592px;
-  }
-}
-
-.image {
-  //order: 1;
-  margin: -76px -24px -48px;
-}
-
-@media (min-width: 640px) {
-  .image {
-    margin: -108px -24px -48px;
-  }
-}
-
-@media (min-width: 960px) {
-  .image {
-    //flex-grow: 1;
-    //order: 2;
-    margin: 0;
-    min-height: 100%;
   }
 }
 
@@ -162,59 +143,3 @@ import { VPImage } from 'vitepress/theme'
   }
 }
 </style>
-
-<!--<style scoped>-->
-<!--.image-container {-->
-<!--  position: relative;-->
-<!--  margin: 0 auto;-->
-<!--  width: 320px;-->
-<!--  height: 320px;-->
-<!--}-->
-
-<!--@media (min-width: 640px) {-->
-<!--  .image-container {-->
-<!--    width: 392px;-->
-<!--    height: 392px;-->
-<!--  }-->
-<!--}-->
-
-<!--@media (min-width: 960px) {-->
-<!--  .image-container {-->
-<!--    display: flex;-->
-<!--    justify-content: center;-->
-<!--    align-items: center;-->
-<!--    //width: 100%;-->
-<!--    //height: 100%;-->
-<!--    /*rtl:ignore*/-->
-<!--    transform: translate(-32px, -32px);-->
-<!--  }-->
-<!--}-->
-
-<!--:deep(.image-src) {-->
-<!--  position: absolute;-->
-<!--  top: 50%;-->
-<!--  /*rtl:ignore*/-->
-<!--  left: 50%;-->
-<!--  max-width: 192px;-->
-<!--  max-height: 192px;-->
-<!--  width: 100%;-->
-<!--  height: 100%;-->
-<!--  object-fit: contain;-->
-<!--  /*rtl:ignore*/-->
-<!--  transform: translate(-50%, -50%);-->
-<!--}-->
-
-<!--@media (min-width: 640px) {-->
-<!--  :deep(.image-src) {-->
-<!--    max-width: 256px;-->
-<!--    max-height: 256px;-->
-<!--  }-->
-<!--}-->
-
-<!--@media (min-width: 960px) {-->
-<!--  :deep(.image-src) {-->
-<!--    max-width: 320px;-->
-<!--    max-height: 320px;-->
-<!--  }-->
-<!--}-->
-<!--</style>-->
