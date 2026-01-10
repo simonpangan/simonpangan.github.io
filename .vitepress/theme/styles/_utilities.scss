@@ -20,6 +20,12 @@ $utilities: (
     class: mx,
     values: map-merge($spacers, (auto: auto))
   ),
+  "margin-top": (
+    responsive: true,
+    property: margin-top,
+    class: mt,
+    values: map-merge($spacers, (auto: auto))
+  ),
   // scss-docs-end utils-spacing
   // Flex utilities
   // scss-docs-start utils-flex
