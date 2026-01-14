@@ -3,10 +3,14 @@
     <div class="before"></div>
     <div class="after"></div>
   </div>
-  <div class="container">
+  <div class="container mx-auto">
     <h1 class="blog-title">Blogs</h1>
-    <div class="blog-list">
-      <a class="blog">
+    <div class="blog-list mt-4">
+      <a class="blog mt-4">
+        <div class="title">Sample Blog</div>
+        <div class="date">January 14, 2026</div>
+      </a>
+      <a class="blog m-4">
         <div class="title">Sample Blog</div>
         <div class="date">January 14, 2026</div>
       </a>
@@ -17,7 +21,6 @@
 <style scoped>
 .container {
   max-width: 1152px;
-  margin: 0 auto;
 }
 
 .blog-title {
@@ -27,7 +30,6 @@
 }
 
 .blog-list {
-  margin-top: 28px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,7 +41,6 @@
   display: block;
   border-radius: 10px;
   padding: 0 20px;
-  margin: 10px;
   background: var(--vp-c-bg);
   max-width: 600px;
   box-shadow: 6px 6px var(--vp-c-brand);
@@ -162,5 +163,3 @@
   }
 }
 </style>
-<script setup lang="ts">
-</script>
