@@ -41,7 +41,7 @@
 .title {
   letter-spacing: -0.4px;
   line-height: 40px;
-  font-size: 2.2em;
+  font-size: 32px;
   font-weight: 700;
 }
 </style>
