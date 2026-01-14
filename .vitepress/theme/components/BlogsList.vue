@@ -6,9 +6,9 @@
   <div class="container mx-auto">
     <h1 class="blog-title">Blogs</h1>
     <div class="blog-list mt-4">
-      <a class="blog mt-4">
-        <div class="title">Sample Blog</div>
-        <div class="date">January 14, 2026</div>
+      <a class="blog mt-4" href="/blogs/graduation">
+        <div class="title">From Thesis Delays to Celebrating Success</div>
+        <div class="date">2 years ago</div>
       </a>
       <a class="blog m-4">
         <div class="title">Sample Blog</div>
