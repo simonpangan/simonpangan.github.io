@@ -4,13 +4,11 @@
     <div class="after"></div>
   </div>
   <div class="container">
-    <h1 class="blog-title text-center fw-bold">Blogs</h1>
+    <h1 class="blog-title">Blogs</h1>
     <div class="blog-list">
       <a class="blog">
-        <div class="title">
-          title
-        </div>
-        <div class="date">date</div>
+        <div class="title">Sample Blog</div>
+        <div class="date">January 14, 2026</div>
       </a>
     </div>
   </div>
@@ -22,32 +20,20 @@
   margin: 0 auto;
 }
 
-.heading {
-  font-size: 24px;
-}
-
-@media (min-width: 640px) {
-  .heading {
-    font-size: 28px;
-  }
-}
-</style>
-
-<style scoped>
 .blog-title {
   text-align: center;
   font-weight: bold;
-  font-size: 2rem;
-  margin-top: 24px;
+  font-size: 32px;
 }
+
 .blog-list {
-  padding: 30px 0;
-  padding-bottom: 30px;
+  margin-top: 28px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .blog {
   width: 85%;
   display: block;
@@ -60,55 +46,25 @@
   border: 4px solid #3f4e4f;
   cursor: pointer;
 }
+
 .blog:hover {
   text-decoration: none;
   transform: translate(-2px, -2px);
   box-shadow: 10px 10px var(--vp-c-brand);
 }
+
 .title {
   color: var(--vp-c-brand-light);
   font-size: 1.2em;
   font-weight: bold;
 }
+
 .date {
   padding-bottom: 7px;
 }
-.pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 85%;
-  max-width: 600px;
-  margin: 0 auto;
-  position: relative;
-}
+</style>
 
-button {
-  display: inline-block;
-  position: relative;
-  color: var(--vp-c-color-d);
-  cursor: pointer;
-  font-size: 1.2em;
-  font-weight: bold;
-}
-
-button::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--vp-c-color-d);
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-button:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
+<style scoped>
 .fireworks {
   box-sizing: border-box;
 }
@@ -206,3 +162,5 @@ button:hover::after {
   }
 }
 </style>
+<script setup lang="ts">
+</script>
