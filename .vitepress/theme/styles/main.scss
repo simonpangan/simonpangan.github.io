@@ -96,6 +96,12 @@
     #47caff 50%
   );
   --vp-home-hero-image-filter: blur(44px);
+
+  --vp-avatar-border: #ffffff;
+}
+
+.dark {
+  --vp-avatar-border: #3f4e4f;
 }
 
 @media (min-width: 640px) {
