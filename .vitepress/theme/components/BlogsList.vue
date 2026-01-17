@@ -3,7 +3,7 @@
     <div class="before"></div>
     <div class="after"></div>
   </div>
-  <div class="container mx-auto">
+  <div class="container mx-auto mt-5">
     <h1 class="blog-title">Blogs</h1>
     <div class="blog-list mt-4">
       <a class="blog mt-4" href="/blogs/graduation">

@@ -6,7 +6,7 @@ import Avatar from "./HomeHeroAvatar.vue";
   <div class="VPHero">
     <div class="container">
       <Avatar />
-      <div class="text-center">
+      <div class="text-center mt-3">
         <h1 class="title">
           Hi, I'm Simon Pangan! 👋
         </h1>
