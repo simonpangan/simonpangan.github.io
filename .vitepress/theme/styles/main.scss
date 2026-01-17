@@ -9,7 +9,12 @@
   --vp-c-default-3: var(--vp-c-gray-3);
   --vp-c-default-soft: var(--vp-c-gray-soft);
 
-  --vp-c-brand-1: var(--vp-c-indigo-1);
+  --vp-c-brand-1: #a2a378;
+  --vp-c-brand-1-light: #b5b68e;
+  //--vp-c-brand-lighter: #c9cabe;
+  //--vp-c-brand-dark: #8f905f;
+  //--vp-c-brand-darker: #6d6e46;
+
   --vp-c-brand-2: var(--vp-c-indigo-2);
   --vp-c-brand-3: var(--vp-c-indigo-3);
   --vp-c-brand-soft: var(--vp-c-indigo-soft);
@@ -28,6 +33,17 @@
   --vp-c-danger-2: var(--vp-c-red-2);
   --vp-c-danger-3: var(--vp-c-red-3);
   --vp-c-danger-soft: var(--vp-c-red-soft);
+
+  --vp-c-bg: #faf6f1;
+}
+
+.dark {
+  --vp-c-bg: #2c3639;
+  --vp-c-divider: rgba(255, 255, 255, 0.18);
+}
+
+.theme {
+  background-color: var(--vp-c-bg);
 }
 
 /**
@@ -113,3 +129,10 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+/**
+ * Component: Footer
+ * -------------------------------------------------------------------------- */
+
+.copyright {
+  color: var(--vp-c-text-1) !important;
+}
