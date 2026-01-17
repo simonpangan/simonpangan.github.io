@@ -41,9 +41,8 @@
   display: block;
   border-radius: 10px;
   padding: 0 20px;
-  background: var(--vp-c-bg);
   max-width: 600px;
-  box-shadow: 6px 6px var(--vp-c-brand);
+  box-shadow: 6px 6px var(--vp-c-brand-1);
   border: 4px solid #3f4e4f;
   cursor: pointer;
 }
@@ -51,11 +50,11 @@
 .blog:hover {
   text-decoration: none;
   transform: translate(-2px, -2px);
-  box-shadow: 10px 10px var(--vp-c-brand);
+  box-shadow: 10px 10px var(--vp-c-brand-1);
 }
 
 .title {
-  color: var(--vp-c-brand-light);
+  color: var(--vp-c-brand-1-light);
   font-size: 1.2em;
   font-weight: bold;
 }
