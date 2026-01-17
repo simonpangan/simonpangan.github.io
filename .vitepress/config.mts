@@ -32,7 +32,7 @@ export default defineConfig({
         {
           find: /^.*\/VPHero\.vue$/,
           replacement: fileURLToPath(
-              new URL('./theme/components/CustomVPHero.vue', import.meta.url)
+              new URL('./theme/components/CustomVPHomeHero.vue', import.meta.url)
           )
         }
       ]
