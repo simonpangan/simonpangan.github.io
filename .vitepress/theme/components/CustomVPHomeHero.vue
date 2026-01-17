@@ -1,6 +1,11 @@
+<script setup>
+import Avatar from "./HomeHeroAvatar.vue";
+</script>
+
 <template>
   <div class="VPHero">
     <div class="container">
+      <Avatar />
       <div class="text-center">
         <h1 class="title">
           Hi, I'm Simon Pangan! 👋
