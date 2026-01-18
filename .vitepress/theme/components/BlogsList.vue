@@ -26,7 +26,7 @@
 .blog-title {
   text-align: center;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 28px;
 }
 
 .blog-list {
