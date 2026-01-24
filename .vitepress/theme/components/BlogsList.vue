@@ -7,6 +7,9 @@
 <!--    &lt;!&ndash;          TODO: Responsive design for mobile&ndash;&gt;-->
 <!--    <h1 class="blog-title">Blogs</h1>-->
 <!--    <div class="blog-list mt-2">-->
+  <div class="container mx-auto mt-5">
+    <h1 class="blog-title">Blogs</h1>
+    <div class="blog-list mt-2">
 <!--      <a class="blog mt-4">-->
 <!--        <div class="title">Modular Approach and Jetbrains File Scope</div>-->
 <!--        <div class="date">January 20, 2026</div>-->
@@ -15,12 +18,12 @@
 <!--        <div class="title">Git Rebase Auto Stash</div>-->
 <!--        <div class="date">January 18, 2026</div>-->
 <!--      </a>-->
-<!--      <a class="blog mt-4" href="/blogs/graduation">-->
-<!--        <div class="title">From Thesis Delays to Celebrating Success</div>-->
-<!--        <div class="date">2 years ago</div>-->
-<!--      </a>-->
-<!--    </div>-->
-<!--  </div>-->
+      <a class="blog mt-4" href="/blogs/simple-naming-convention-for-nested-eloquent-closures">
+        <div class="title">A Simple Naming Convention for Nested Eloquent Closures</div>
+        <div class="date">Janruary 24, 2026</div>
+      </a>
+    </div>
+  </div>
 </template>
 
 <style scoped>
