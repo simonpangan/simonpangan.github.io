@@ -50,7 +50,7 @@ This small convention becomes especially valuable in large codebases where queri
 
 ## **Real-World Example**
 
-Here’s a real example from my current project, using this naming convention in a deeply nested query:
+Here’s a real example from my current project that uses this naming convention in a deeply nested query:
 
 ```php
 private function getUsersToNotify(): Collection
