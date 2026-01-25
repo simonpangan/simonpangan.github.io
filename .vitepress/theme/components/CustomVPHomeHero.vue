@@ -7,9 +7,7 @@ import Avatar from "./HomeHeroAvatar.vue";
     <div class="container">
       <Avatar />
       <div class="text-center mt-3">
-        <h1 class="title">
-          Hi, I'm Simon Pangan! 👋
-        </h1>
+        <h1 class="title">Hi, I'm Simon Pangan!👋</h1>
         <div class="mt-1">
           A Full Stack Developer based in Philippines
         </div>
@@ -46,7 +44,13 @@ import Avatar from "./HomeHeroAvatar.vue";
 .title {
   letter-spacing: -0.4px;
   line-height: 40px;
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 700;
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 36px;
+  }
 }
 </style>
