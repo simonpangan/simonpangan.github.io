@@ -33,7 +33,7 @@ Instead of reusing the same variable name (commonly `$query`) at every nesting l
 
 ```php
 $q->whereHas('role', function (Builder $qq) {
-    $qq->where('code', Role::SUPER_ADMIN->value);
+    $qq->where('code', Role::SUPER_ADMIN);
 });
 ```
 
