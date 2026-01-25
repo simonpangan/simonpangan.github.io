@@ -25,7 +25,7 @@ head:
 
 <br />
 
-If you use Laravel, chances are you work with Eloquent and the Query Builder a lot. As queries grow more complex — especially with nested closures like `whereHas`— readability can quickly become a problem. While working on a large Laravel codebase, I started experimenting with a small naming convention that made deeply nested queries much easier to reason about.
+If you use Laravel, chances are you work with Eloquent and the Query Builder a lot. As queries grow more complex—especially with nested closures like `whereHas`—readability can quickly become a problem. While working on a large Laravel codebase, I started experimenting with a small naming convention that made deeply nested queries much easier to reason about.
 
 ## The Idea
 
