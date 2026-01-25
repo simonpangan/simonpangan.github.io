@@ -1,12 +1,8 @@
 <template>
-  <div class="fireworks">
-    <div class="before"></div>
-    <div class="after"></div>
-  </div>
-<!--  <div class="container mx-auto mt-5">-->
-<!--    &lt;!&ndash;          TODO: Responsive design for mobile&ndash;&gt;-->
-<!--    <h1 class="blog-title">Blogs</h1>-->
-<!--    <div class="blog-list mt-2">-->
+<!--  <div class="fireworks">-->
+<!--    <div class="before"></div>-->
+<!--    <div class="after"></div>-->
+<!--  </div>-->
   <div class="container mx-auto mt-5">
     <h1 class="blog-title">Blogs</h1>
     <div class="blog-list mt-2">
