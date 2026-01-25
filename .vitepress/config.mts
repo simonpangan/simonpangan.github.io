@@ -2,7 +2,7 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: "Simon Pangan • Laravel & PHP Developer • Manila, Philippines",
+  title: "Simon Pangan",
   description: "A VitePress Site",
   base: '/',
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
