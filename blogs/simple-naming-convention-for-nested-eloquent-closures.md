@@ -29,7 +29,7 @@ If you use Laravel, chances are you work with Eloquent and the Query Builder a l
 
 ## The Idea
 
-Instead of reusing the same variable name (commonly `$query`) at every nesting level, or prefixing variables based on the relationship or purpose (like `$roleQuery`), I use **short, distinct variable names** where each deeper level simply adds another letter:
+Instead of reusing the same variable name (commonly `$query`) at every nesting level or prefixing variables based on the relationship or purpose (like `$roleQuery`), I use **short, distinct variable names** where each deeper level simply adds another letter:
 
 ```php
 $q->whereHas('role', function (Builder $qq) {
