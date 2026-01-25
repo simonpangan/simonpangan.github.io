@@ -30,7 +30,13 @@
 .blog-title {
   text-align: center;
   font-weight: bold;
-  font-size: 28px;
+  font-size: 24px;
+}
+
+@media (min-width: 640px) {
+  .blog-title {
+    font-size: 28px;
+  }
 }
 
 .blog-list {
@@ -59,8 +65,14 @@
 
 .title {
   color: var(--vp-c-brand-1-light);
-  font-size: 1.2em;
+  font-size: 16px;
   font-weight: bold;
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 20px;
+  }
 }
 
 .date {
@@ -166,5 +178,6 @@
   }
 }
 </style>
+
 <script setup lang="ts">
 </script>
