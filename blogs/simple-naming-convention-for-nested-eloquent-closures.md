@@ -88,4 +88,4 @@ In practice, this version is much easier to read and reason about—especially w
 
 ## Final Thoughts
 
-This convention may not be for everyone, and that’s perfectly fine. What matters most is choosing an approach that improves clarity and consistency for you and your team. Personally, I’ve found that using short, incremental variable names is a **small tweak with a big impact**—making deeply nested Eloquent queries easier to read, scan, and maintain over time. Even minor naming adjustments like this can save you a lot of mental overhead when revisiting complex logic.
+This convention may not be for everyone, and that’s perfectly fine. What matters most is choosing an approach that improves clarity and consistency for you and your team. Personally, I’ve found that using short, incremental variable names is a **small tweak with a big impact**—making deeply nested Eloquent queries easier to read, scan, and maintain over time. Even minor naming adjustments like this can save you a lot of mental overhead when revisiting complex logic later.
