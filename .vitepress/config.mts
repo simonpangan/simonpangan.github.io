@@ -4,8 +4,6 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Simon Pangan",
   description: "A VitePress Site",
-  base: '/',
-  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   themeConfig: {
     siteTitle: false,
     nav: [
