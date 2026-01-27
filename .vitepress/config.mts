@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: "Simon Pangan",
-  description: "A VitePress Site",
+  description: "Personal website of Simon Pangan, a full-stack developer specializing in Laravel, Vue.js, and modern web development.",
   themeConfig: {
     siteTitle: false,
     nav: [
