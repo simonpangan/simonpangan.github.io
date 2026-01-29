@@ -25,7 +25,7 @@ head:
 
 <br />
 
-If you use Laravel, you probably work with Eloquent and the Query Builder a lot. As queries grow more complex—especially with nested closures like `whereHas`—readability can quickly become an issue. While working on a large Laravel codebase, I started experimenting with a simple naming convention that made deeply nested queries much easier to understand.
+If you use Laravel, you probably work with Eloquent and the Query Builder a lot. As queries grow more complex—especially with nested closures like `whereHas`—readability can become an issue. While working on a large Laravel codebase, I started experimenting with a simple naming convention that made deeply nested queries much easier to understand.
 
 ## The Idea
 
@@ -50,7 +50,7 @@ This small convention becomes especially valuable in large codebases where queri
 
 ## **Real-World Example**
 
-Here’s a real example from my current project that uses this naming convention in a deeply nested query:
+Here’s a real example from my current project that uses this naming convention within a deeply nested query:
 
 ```php
 private function getUsersToNotify(): Collection
