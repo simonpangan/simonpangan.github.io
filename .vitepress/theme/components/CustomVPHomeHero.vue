@@ -9,7 +9,7 @@ import Avatar from "./HomeHeroAvatar.vue";
       <div class="text-center mt-3">
         <h1 class="title">Hi, I'm Simon Pangan!👋</h1>
         <div class="mt-1">
-          A Full Stack Developer based in Philippines
+          A Full Stack Developer based in the Philippines
         </div>
       </div>
     </div>
