@@ -46,7 +46,7 @@ This creates an immediate visual cue for how deep you are in the query structure
 - **Better visual scanning** – The structure of the query becomes easier to follow when scrolling.
 - **Less noise** – Shorter variable names reduce clutter while keeping intent clear.
 
-This small convention becomes especially valuable in large codebases where queries are revisited and modified over time.
+This simple convention becomes especially valuable in large codebases where queries are revisited and modified over time.
 
 ## **Real-World Example**
 
