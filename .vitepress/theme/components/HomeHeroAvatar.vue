@@ -18,14 +18,14 @@
 
 @keyframes avatar-transform {
   from {
-    transform: rotate(0);
+    //transform: rotate(0);
   }
   to {
-    transform: rotate(360deg);
+    //transform: rotate(360deg);
   }
 }
 
 .avatar:hover {
-  animation: 5s linear 0s infinite avatar-transform;
+  //animation: 5s linear 0s infinite avatar-transform;
 }
 </style>
