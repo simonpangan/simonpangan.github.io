@@ -11,15 +11,12 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'twitter', link: 'https://x.com/simonpangan_/' },
-      { icon: 'linkedin', link: 'https://www.linkedin.com/in/simonpangan/' },
-      { icon: 'github', link: 'https://github.com/simonpangan' },
-      // {
-      //   icon: 'linktree',
-      //   link: 'https://linktr.ee/simonpangan',
-      //   target: '_blank',
-      //   ariaLabel: 'Linktree Link'
-      // },
+      {
+        icon: 'linktree',
+        link: 'https://linktr.ee/simonpangan',
+        target: '_blank',
+        ariaLabel: 'Linktree Link'
+      }
     ],
 
     footer: {
