@@ -16,7 +16,7 @@
 <!--      </a>-->
       <a class="blog mt-4" href="/blogs/simple-naming-convention-for-nested-eloquent-closures">
         <div class="title">A Simple Naming Convention for Nested Eloquent Closures</div>
-        <div class="date">Janruary 24, 2026</div>
+        <div class="date">January 24, 2026</div>
       </a>
     </div>
   </div>
