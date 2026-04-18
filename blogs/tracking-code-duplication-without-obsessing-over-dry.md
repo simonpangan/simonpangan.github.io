@@ -41,6 +41,7 @@ When you duplicate code during early development, you're often still figuring th
 
 So instead of aggressively removing duplication, I started doing something simpler: **I track it**.
 
+
 ## Why I Stopped Fighting Duplication
 
 ### The Rule of Three
@@ -189,7 +190,7 @@ This gives me a simple way to search, group, and reason about related code witho
 
 To find duplicates at scale, use your IDE's global search (Cmd+Shift+F on Mac, Ctrl+Shift+F on most others) and search for the UUID. This makes it trivial to jump between all instances of duplicated logic across the codebase.
 
-You can use the [Randomness](https://plugins.jetbrains.com/plugin/9836-randomness) plugin to generate UUIDs directly in the editor.
+You can use the [Randomness](https://plugins.jetbrains.com/plugin/9836-randomness) plugin if you use Jetbrains or find similar in your editor of choice to generate UUIDs directly in the editor.
 
 ## Final thoughts
 
