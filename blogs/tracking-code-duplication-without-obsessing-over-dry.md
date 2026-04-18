@@ -32,8 +32,8 @@ I used to follow the DRY principle pretty strictly. If I saw duplication, I remo
 
 I don’t do that anymore.
 
-Over time, I started to think DRY is often over-applied, especially at the architectural level.
-It works great for simple utilities, but once you start forcing it into evolving parts of a system, it can make things worse.
+Over time, I realized DRY is often over-applied especially in architecture. 
+It works well for stable utilities, but forcing it into fast-evolving parts of a system can make code harder to change.
 
 Duplication isn’t always the problem. Premature abstraction is.
 
@@ -95,7 +95,8 @@ Reintroduce the duplication. Let the code breathe again. Then, with better conte
 
 Instead of removing duplication immediately, I make it visible.
 
-I use **DUP** tags in comments and attach a label to it to mark duplicated logic. In my case I use UUID, so I don't have to think about a name. 
+I mark duplicated logic with a `DUP` comment and a UUID. 
+UUIDs keep identifiers unique without forcing me to invent names.
 For larger sections, I wrap them in a region-style block with the same identifier.
 
 ### Single-line DUP tag
@@ -190,7 +191,7 @@ This gives me a simple way to search, group, and reason about related code witho
 
 To find duplicates at scale, use your IDE's global search (Cmd+Shift+F on Mac, Ctrl+Shift+F on most others) and search for the UUID. This makes it trivial to jump between all instances of duplicated logic across the codebase.
 
-You can use the [Randomness](https://plugins.jetbrains.com/plugin/9836-randomness) plugin if you use Jetbrains or find similar in your editor of choice to generate UUIDs directly in the editor.
+If you use JetBrains IDEs, the [Randomness](https://plugins.jetbrains.com/plugin/9836-randomness) plugin can generate UUIDs directly in the editor. Use an equivalent extension in other editors.
 
 ## Final thoughts
 
