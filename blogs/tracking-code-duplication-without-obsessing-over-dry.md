@@ -97,7 +97,8 @@ Reintroduce the duplication. Let the code breathe again. Then, with better conte
 
 Instead of removing duplication immediately, I make it visible.
 
-I use **DUP** tags in comments and attach a UUID to mark duplicated logic. For larger sections, I wrap them in a region-style block with the same identifier.
+I use **DUP** tags in comments and attach a label to it to mark duplicated logic. In my case I use UUID, so I don't have to think about a name. 
+For larger sections, I wrap them in a region-style block with the same identifier.
 
 ### Single-line DUP tag
     
