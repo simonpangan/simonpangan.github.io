@@ -70,13 +70,16 @@ It becomes harder to understand, harder to change, and ironically, less reusable
 A wrong abstraction doesn’t just sit there—it shapes future code in the wrong direction.
 
 
-### Wrong Abstractions Increase Cost of Change
+[//]: # (### Wrong Abstractions Increase Cost of Change)
 
-A poorly chosen abstraction doesn’t just hurt readability—it increases the cost of every future change.
+[//]: # ()
+[//]: # (A poorly chosen abstraction doesn’t just hurt readability—it increases the cost of every future change.)
 
-Every developer who touches that code has to understand it, work around it, and often extend it in ways it wasn’t designed for.
+[//]: # ()
+[//]: # (Every developer who touches that code has to understand it, work around it, and often extend it in ways it wasn’t designed for.)
 
-Fixing it later is possible—but it’s rarely trivial.
+[//]: # ()
+[//]: # (Fixing it later is possible—but it’s rarely trivial.)
 
 ### Duplication Helps You See the System More Clearly
 
