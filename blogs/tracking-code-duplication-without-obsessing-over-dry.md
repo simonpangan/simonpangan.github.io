@@ -47,21 +47,17 @@ So instead of aggressively removing duplication, I started doing something simpl
 
 There's a simple idea in software design that changed how I write code: **the rule of three**.
 
-The rule of three is about deferring abstraction decisions until they’re justified.
-
 If you see something twice, leave it alone. When you see it a third (or even fourth) time, that’s when you start thinking about abstraction.
 
 As developers, we often assume we know how code will evolve. We design for that imagined future but we’re frequently wrong. Once an abstraction is in place, it becomes harder to change because it carries implicit assumptions about how the system should work.
 
-The rule of three pushes back on this instinct. It encourages us to tolerate some duplication, let patterns emerge naturally, and only refactor when the shape of the problem is clearer.
+The rule of three pushes back on this instinct: tolerate some duplication, let patterns emerge naturally, and refactor when the shape of the problem is clearer.
 
 ### Abstractions Have Momentum
 
 Here’s the real problem with premature abstraction: **once it exists, it sticks**.
 
-You introduce a helper, a service, or some reusable component because you assume it’ll be needed everywhere. Later, someone comes along with a slightly different use case.
-
-Instead of writing something simple, they try to fit it into the existing abstraction—because it’s already there.
+You introduce a helper, a service, or some reusable component because you assume it’ll be needed everywhere. Later, someone comes along with a slightly different use case and tries to force it into the existing abstraction—because it’s already there.
 
 So the abstraction grows: more parameters, more conditions, more edge cases.
 
@@ -126,7 +122,9 @@ public function previewPayment(PaymentData $data): array
     
 ### Region-style DUP block
     
-The main benefit here is [code folding](https://www.jetbrains.com/help/phpstorm/working-with-source-code.html#code_folding), plus clearer grouping of duplicated logic inside larger blocks.
+The main benefit here is 
+[code folding](https://www.jetbrains.com/help/phpstorm/working-with-source-code.html#code_folding), 
+plus clearer grouping of duplicated logic inside larger blocks.
     
 ```php
 public function checkout(PaymentData $data): void
