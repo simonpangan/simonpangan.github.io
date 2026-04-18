@@ -121,7 +121,7 @@ public function previewPayment(PaymentData $data): array
     
 ### Region-style DUP block
     
-The main benefit here is code folding as well as grouping duplicated logic within a larger block.
+The main benefit here is [code folding](https://www.jetbrains.com/help/phpstorm/working-with-source-code.html#code_folding) as well as grouping duplicated logic within a larger block.
     
 ```php
 public function checkout(PaymentData $data): void
