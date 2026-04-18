@@ -53,7 +53,7 @@ If you see something twice, leave it alone. When you see it a third (or even fou
 
 As developers, we often assume we know how code will evolve. We design for that imagined future but we’re frequently wrong. Once an abstraction is in place, it becomes harder to change because it carries implicit assumptions about how the system should work.
 
-The rule of three pushes back on this instinct: tolerate some duplication, let patterns emerge naturally, and refactor when the shape of the problem is clearer.
+The rule of three pushes back on this instinct: tolerate some duplication, let patterns emerge naturally, and **refactor when the shape of the problem is clearer**.
 
 ### Abstractions Have Momentum
 
