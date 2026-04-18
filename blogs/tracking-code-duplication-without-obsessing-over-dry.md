@@ -32,15 +32,11 @@ I used to follow the DRY principle pretty strictly. If I saw duplication, I remo
 
 I don’t do that anymore.
 
-Over time, I started to think DRY is overrated—and often abused, especially at the architectural level. It works great for simple utilities, but once you start forcing it into evolving parts of a system, it can make things worse.
+Over time, I started to think DRY is overrated and often abused, especially at the architectural level. It works great for simple utilities, but once you start forcing it into evolving parts of a system, it can make things worse.
 
 Duplication isn’t always the problem. Premature abstraction is.
 
 When you duplicate code during early development, you  often still figuring things out. Forcing an abstraction too soon means you’re guessing what the common pattern should be and that guess is often wrong. You end up with brittle, confusing structures that need to be undone later.
-
-Instead of rushing to abstract, it’s better to address the real problem: not being able to find and reason about duplication. Managing duplication is usually easier than untangling a bad abstraction.
-
-Instead of rushing to abstract, fix the real problem: not being able to find and reason about duplication. It’s much easier to manage duplication than to untangle a bad abstraction.
 
 So instead of aggressively removing duplication, I started doing something simpler: **I track it**.
 
@@ -54,27 +50,24 @@ The rule of three is about deferring decisions until they’re justified.
 
 If you see something twice, leave it alone. When you see it a third (or even fourth) time, that’s when you start thinking about abstraction.
 
-As developers, we often assume we know how code will evolve. We design for that imagined future—but we’re frequently wrong. Once an abstraction is in place, it becomes harder to change because it carries implicit assumptions about how the system should work.
+As developers, we often assume we know how code will evolve. We design for that imagined future but we’re frequently wrong. Once an abstraction is in place, it becomes harder to change because it carries implicit assumptions about how the system should work.
 
 The rule of three pushes back on this instinct. It encourages us to tolerate some duplication, let patterns emerge naturally, and only refactor when the shape of the problem is clearer.
 
 ### Abstractions Have Momentum
 
-Here’s the real problem with premature abstraction: once it exists, it sticks.
+Here’s the real problem with premature abstraction: **once it exists, it sticks**.
 
-You introduce a helper, a service, or some reusable component because you assume it’ll be needed everywhere.
-
-Later, someone comes along with a slightly different use case.
+You introduce a helper, a service, or some reusable component because you assume it’ll be needed everywhere. Later, someone comes along with a slightly different use case.
 
 Instead of writing something simple, they try to fit it into the existing abstraction—because it’s already there.
 
-So the abstraction grows.
-
-More parameters. More conditions. More edge cases.
+So the abstraction grows: more parameters, more conditions, more edge cases.
 
 It becomes harder to understand, harder to change, and ironically, less reusable.
 
 A wrong abstraction doesn’t just sit there—it shapes future code in the wrong direction.
+
 
 ### Wrong Abstractions Increase Cost of Change
 
@@ -84,23 +77,23 @@ Every developer who touches that code has to understand it, work around it, and 
 
 Fixing it later is possible—but it’s rarely trivial.
 
-### Sometimes the Fix Is to Remove the Abstraction
-
-If an abstraction turns out to be wrong, the best move is often to remove it.
-
-Reintroduce the duplication. Let the code breathe again. Then, with better context, decide what the right abstraction should be.
-
 ### Duplication Helps You See the System More Clearly
 
 At an architectural level, a bit of duplication can actually improve understanding.
 
 It allows patterns to emerge naturally. By the time you’re ready to extract something, you’re no longer guessing—you’re responding to something real.
 
+### Sometimes the Fix Is to Remove the Abstraction
+
+If an abstraction turns out to be wrong, the best move is often to remove it.
+
+Reintroduce the duplication. Let the code breathe again. Then, with better context, decide what the right abstraction should be.
+
 ## How I track duplication
 
 Instead of removing duplication immediately, I make it visible.
 
-**DUP tags in comments** where I add a UUID to mark duplicated logic. For larger sections, I wrap them in a region-style block with the same identifier.
+I use **DUP** tags in comments where I add a UUID to mark duplicated logic. For larger sections, I wrap them in a region-style block with the same identifier.
 
 ### Single-line DUP tag
     
@@ -128,7 +121,7 @@ public function previewPayment(PaymentData $data): array
     
 ### Region-style DUP block
     
-The main benefit here is code folding, as well as grouping duplicated logic within a larger block.
+The main benefit here is code folding as well as grouping duplicated logic within a larger block.
     
 ```php
 public function checkout(PaymentData $data): void
@@ -173,10 +166,9 @@ public function retryPayment(PaymentData $data): void
 ```
 
 If you’re using a JetBrains IDE, you can also use 
-[editor folding](https://www.jetbrains.com/help/phpstorm/code-folding-settings.html#fold-by-default-section:~:text=...%7D%0A%7D-,Custom%20folding%20regions,-Folds%20regions%20that):
-
+[editor-fold](https://www.jetbrains.com/help/phpstorm/code-folding-settings.html#fold-by-default-section:~:text=...%7D%0A%7D-,Custom%20folding%20regions,-Folds%20regions%20that):
 ```php
-public function checkout(array $data): void
+public function checkout(PaymentData $data): void
 {
     //some other codes ...
         
@@ -188,24 +180,22 @@ public function checkout(array $data): void
 }
 ```
     
-This gives me a simple way to search, group, and reason about related code—without forcing an abstraction too early.
+This gives me a simple way to search, group, and reason about related code without forcing an abstraction too early.
 
 If you’re using a JetBrains IDE, you can use the [Randomness](https://plugins.jetbrains.com/plugin/9836-randomness) plugin to generate UUIDs directly in the editor.
 
 ## Final thoughts
 
-I still refactor—but not immediately.
+We need to be less afraid of duplication.
 
-I do it when:
+I still refactor but not immediately. I wait until the pattern stabilizes, the duplication becomes painful, and the right abstraction is obvious rather than guessed.
 
-- the pattern stabilizes
-- the duplication becomes painful
-- the abstraction is obvious (not guessed)
+At that point, the abstraction tends to be simpler, more accurate, and easier to maintain.
 
-At that point, the abstraction is usually simpler and more accurate.
+DRY isn’t wrong but it’s often applied too early.
 
-DRY isn’t wrong—but it’s often applied too early.
+Duplication itself isn’t the real problem. Untracked, misunderstood duplication is.
 
-Duplication isn’t the real problem. Untracked, misunderstood duplication is.
+That’s why I prefer a simpler approach: make duplication visible, give it context, and let it evolve before trying to eliminate it.
 
-Track first. Refactor later.
+**Track first. Refactor later.**
