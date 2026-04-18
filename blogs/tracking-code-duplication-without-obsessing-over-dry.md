@@ -32,11 +32,12 @@ I used to follow the DRY principle pretty strictly. If I saw duplication, I remo
 
 I don’t do that anymore.
 
-Over time, I started to think DRY is overrated and often abused, especially at the architectural level. It works great for simple utilities, but once you start forcing it into evolving parts of a system, it can make things worse.
+Over time, I started to think DRY is often over-applied, especially at the architectural level.
+It works great for simple utilities, but once you start forcing it into evolving parts of a system, it can make things worse.
 
 Duplication isn’t always the problem. Premature abstraction is.
 
-When you duplicate code during early development, you  often still figuring things out. Forcing an abstraction too soon means you’re guessing what the common pattern should be and that guess is often wrong. You end up with brittle, confusing structures that need to be undone later.
+When you duplicate code during early development, you're often still figuring things out. Forcing an abstraction too soon means you’re guessing what the common pattern should be and that guess is often wrong. You end up with brittle, confusing structures that need to be undone later.
 
 So instead of aggressively removing duplication, I started doing something simpler: **I track it**.
 
@@ -46,7 +47,7 @@ So instead of aggressively removing duplication, I started doing something simpl
 
 There’s a simple idea that changed how I write code: **the rule of three**.
 
-The rule of three is about deferring decisions until they’re justified.
+The rule of three is about deferring abstraction decisions until they’re justified.
 
 If you see something twice, leave it alone. When you see it a third (or even fourth) time, that’s when you start thinking about abstraction.
 
@@ -89,11 +90,11 @@ If an abstraction turns out to be wrong, the best move is often to remove it.
 
 Reintroduce the duplication. Let the code breathe again. Then, with better context, decide what the right abstraction should be.
 
-## How I track duplication
+## How I Track Duplication
 
 Instead of removing duplication immediately, I make it visible.
 
-I use **DUP** tags in comments where I add a UUID to mark duplicated logic. For larger sections, I wrap them in a region-style block with the same identifier.
+I use **DUP** tags in comments and attach a UUID to mark duplicated logic. For larger sections, I wrap them in a region-style block with the same identifier.
 
 ### Single-line DUP tag
     
@@ -121,12 +122,12 @@ public function previewPayment(PaymentData $data): array
     
 ### Region-style DUP block
     
-The main benefit here is [code folding](https://www.jetbrains.com/help/phpstorm/working-with-source-code.html#code_folding) as well as grouping duplicated logic within a larger block.
+The main benefit here is [code folding](https://www.jetbrains.com/help/phpstorm/working-with-source-code.html#code_folding), plus clearer grouping of duplicated logic inside larger blocks.
     
 ```php
 public function checkout(PaymentData $data): void
 {
-    //some other codes ...
+    // Some other code...
 
     // region DUP: 119f6849-88b1-48fd-bdb1-1320081e4d2c
     if ($data->amount <= 0) {
@@ -142,7 +143,7 @@ public function checkout(PaymentData $data): void
     }
     // endregion
 
-    //Some other codes ...
+    // Some other code...
 }
 
 public function retryPayment(PaymentData $data): void
@@ -161,38 +162,39 @@ public function retryPayment(PaymentData $data): void
     }
     // endregion
 
-    //Some other codes ...
+    // Some other code...
 }
 ```
 
 If you’re using a JetBrains IDE, you can also use 
 [editor-fold](https://www.jetbrains.com/help/phpstorm/code-folding-settings.html#fold-by-default-section:~:text=...%7D%0A%7D-,Custom%20folding%20regions,-Folds%20regions%20that):
+
 ```php
 public function checkout(PaymentData $data): void
 {
-    //some other codes ...
+    // Some other code...
         
     //<editor-fold desc="DUP: 3b8e1f2a-77d4-4a91-9c2b-123456789abc">
     //Some codes...
     //</editor-fold>
     
-     //Some other codes ...
+     // Some other code...
 }
 ```
     
 This gives me a simple way to search, group, and reason about related code without forcing an abstraction too early.
 
-If you’re using a JetBrains IDE, you can use the [Randomness](https://plugins.jetbrains.com/plugin/9836-randomness) plugin to generate UUIDs directly in the editor.
+You can use the [Randomness](https://plugins.jetbrains.com/plugin/9836-randomness) plugin to generate UUIDs directly in the editor.
 
 ## Final thoughts
 
 We need to be less afraid of duplication.
 
-I still refactor but not immediately. I wait until the pattern stabilizes, the duplication becomes painful, and the right abstraction is obvious rather than guessed.
+I still refactor, but not immediately. I wait until the pattern stabilizes, the duplication becomes painful, and the right abstraction is obvious rather than guessed.
 
 At that point, the abstraction tends to be simpler, more accurate, and easier to maintain.
 
-DRY isn’t wrong but it’s often applied too early.
+DRY isn’t wrong, but it’s often applied too early.
 
 Duplication itself isn’t the real problem. Untracked, misunderstood duplication is.
 
