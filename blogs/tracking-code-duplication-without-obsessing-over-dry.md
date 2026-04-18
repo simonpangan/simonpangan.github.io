@@ -105,21 +105,21 @@ Instead of removing duplication immediately, I make it visible.
 ### Single-line DUP tag
     
 ```php
-public function processCheckout(Cart $cart): void
+public function processPayment(PaymentData $data): void
 {
     // DUP: 57518c0e-4457-466e-b379-a56d25c59bb9
-    if (empty($cart->items) || $cart->total <= 0) {
-        throw new Exception('Invalid checkout state');
+    if ($data->amount <= 0 || empty($data->paymentMethod) || !$data->userVerified) {
+        throw new Exception('Invalid payment state');
     }
 
     // ...
 }
 
-public function previewCheckout(Cart $cart): array
+public function previewPayment(PaymentData $data): array
 {
     // DUP: 57518c0e-4457-466e-b379-a56d25c59bb9
-    if (empty($cart->items) || $cart->total <= 0) {
-        throw new Exception('Invalid checkout state');
+    if ($data->amount <= 0 || empty($data->paymentMethod) || !$data->userVerified) {
+        throw new Exception('Invalid payment state');
     }
 
     // ...
@@ -131,20 +131,20 @@ public function previewCheckout(Cart $cart): array
 The main benefit here is code folding, as well as grouping duplicated logic within a larger block.
     
 ```php
-public function checkout(array $data): void
+public function checkout(PaymentData $data): void
 {
     //some other codes ...
 
     // region DUP: 119f6849-88b1-48fd-bdb1-1320081e4d2c
-    if ($data['amount'] <= 0) {
+    if ($data->amount <= 0) {
         throw new Exception('Invalid amount');
     }
 
-    if (empty($data['payment_method'])) {
+    if (empty($data->paymentMethod)) {
         throw new Exception('Payment method required');
     }
 
-    if (!$data['user_verified']) {
+    if (!$data->userVerified) {
         throw new Exception('User not verified');
     }
     // endregion
@@ -152,18 +152,18 @@ public function checkout(array $data): void
     //Some other codes ...
 }
 
-public function retryPayment(array $data): void
+public function retryPayment(PaymentData $data): void
 {
     // region DUP: 119f6849-88b1-48fd-bdb1-1320081e4d2c
-    if ($data['amount'] <= 0) {
+    if ($data->amount <= 0) {
         throw new Exception('Invalid amount');
     }
 
-    if (empty($data['payment_method'])) {
+    if (empty($data->paymentMethod)) {
         throw new Exception('Payment method required');
     }
 
-    if (!$data['user_verified']) {
+    if (!$data->userVerified) {
         throw new Exception('User not verified');
     }
     // endregion
@@ -172,7 +172,8 @@ public function retryPayment(array $data): void
 }
 ```
 
-If you’re using a JetBrains IDE, you can also use [editor folding](https://www.jetbrains.com/help/phpstorm/code-folding-settings.html#fold-by-default-section:~:text=...%7D%0A%7D-,Custom%20folding%20regions,-Folds%20regions%20that):
+If you’re using a JetBrains IDE, you can also use 
+[editor folding](https://www.jetbrains.com/help/phpstorm/code-folding-settings.html#fold-by-default-section:~:text=...%7D%0A%7D-,Custom%20folding%20regions,-Folds%20regions%20that):
 
 ```php
 public function checkout(array $data): void
