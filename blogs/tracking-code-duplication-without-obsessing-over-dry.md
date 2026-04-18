@@ -190,8 +190,8 @@ If you use JetBrains IDEs, the [Randomness](https://plugins.jetbrains.com/plugin
 
 We need to be less afraid of duplication.
 
-I still refactor, but not immediately. I wait until the pattern stabilizes, the duplication becomes painful, and the right abstraction is obvious rather than guessed.
-
+I still refactor, but not immediately. 
+I wait until the pattern stabilizes, the duplication becomes painful, and the right abstraction is obvious rather than guessed. 
 At that point, the abstraction tends to be simpler, more accurate, and easier to maintain.
 Until then, I make duplication visible, give it context, and let it evolve.
 
