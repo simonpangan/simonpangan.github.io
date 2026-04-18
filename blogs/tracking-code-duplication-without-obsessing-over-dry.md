@@ -45,7 +45,7 @@ So instead of aggressively removing duplication, I started doing something simpl
 
 ### The Rule of Three
 
-There’s a simple idea that changed how I write code: **the rule of three**.
+There's a simple idea in software design that changed how I write code: **the rule of three**.
 
 The rule of three is about deferring abstraction decisions until they’re justified.
 
@@ -175,7 +175,7 @@ public function checkout(PaymentData $data): void
     // Some other code...
         
     //<editor-fold desc="DUP: 3b8e1f2a-77d4-4a91-9c2b-123456789abc">
-    //Some codes...
+    // ...
     //</editor-fold>
     
      // Some other code...
@@ -183,6 +183,8 @@ public function checkout(PaymentData $data): void
 ```
     
 This gives me a simple way to search, group, and reason about related code without forcing an abstraction too early.
+
+To find duplicates at scale, use your IDE's global search (Cmd+Shift+F on Mac, Ctrl+Shift+F on most others) and search for the UUID. This makes it trivial to jump between all instances of duplicated logic across the codebase.
 
 You can use the [Randomness](https://plugins.jetbrains.com/plugin/9836-randomness) plugin to generate UUIDs directly in the editor.
 
