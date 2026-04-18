@@ -37,14 +37,15 @@ It works well for stable utilities, but forcing it into fast-evolving parts of a
 
 Duplication isn’t always the problem. Premature abstraction is.
 
-When you duplicate code during early development, you're often still figuring things out. Forcing an abstraction too soon means you’re guessing what the common pattern should be and that guess is often wrong. You end up with brittle, confusing structures that need to be undone later.
-
 So instead of aggressively removing duplication, I started doing something simpler: **I track it**.
 
 
 ## Why I Stopped Fighting Duplication
 
-### The Rule of Three
+
+### Duplication Helps You See the System More Clearly
+
+At an architectural level, a bit of duplication can actually improve understanding.
 
 There's a simple idea in software design that changed how I write code: **the rule of three**.
 
@@ -79,17 +80,10 @@ A wrong abstraction doesn’t just sit there—it shapes future code in the wron
 [//]: # ()
 [//]: # (Fixing it later is possible—but it’s rarely trivial.)
 
-### Duplication Helps You See the System More Clearly
-
-At an architectural level, a bit of duplication can actually improve understanding.
-
-It allows patterns to emerge naturally. By the time you’re ready to extract something, you’re no longer guessing—you’re responding to something real.
-
 ### Sometimes the Fix Is to Remove the Abstraction
 
-If an abstraction turns out to be wrong, the best move is often to remove it.
-
-Reintroduce the duplication. Let the code breathe again. Then, with better context, decide what the right abstraction should be.
+If an abstraction turns out to be wrong, the best move is often to remove it. Reintroduce the duplication. 
+Let the code breathe again. Then, with better context, decide what the right abstraction should be.
 
 ## How I Track Duplication
 
@@ -186,10 +180,9 @@ public function checkout(PaymentData $data): void
      // Some other code...
 }
 ```
-    
-This gives me a simple way to search, group, and reason about related code without forcing an abstraction too early.
 
-To find duplicates at scale, use your IDE's global search (Cmd+Shift+F on Mac, Ctrl+Shift+F on most others) and search for the UUID. This makes it trivial to jump between all instances of duplicated logic across the codebase.
+This gives me a simple way to search, group, and reason about related code without forcing an abstraction too early. 
+To find duplicates at scale, use your IDE's global search (Cmd+Shift+F on Mac, Ctrl+Shift+F on most others) and search for the UUID.
 
 If you use JetBrains IDEs, the [Randomness](https://plugins.jetbrains.com/plugin/9836-randomness) plugin can generate UUIDs directly in the editor. Use an equivalent extension in other editors.
 
@@ -200,11 +193,6 @@ We need to be less afraid of duplication.
 I still refactor, but not immediately. I wait until the pattern stabilizes, the duplication becomes painful, and the right abstraction is obvious rather than guessed.
 
 At that point, the abstraction tends to be simpler, more accurate, and easier to maintain.
-
-DRY isn’t wrong, but it’s often applied too early.
-
-Duplication itself isn’t the real problem. Untracked, misunderstood duplication is.
-
-That’s why I prefer a simpler approach: make duplication visible, give it context, and let it evolve before trying to eliminate it.
+Until then, I make duplication visible, give it context, and let it evolve.
 
 **Track first. Refactor later.**
