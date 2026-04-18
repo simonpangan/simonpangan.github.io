@@ -7,13 +7,13 @@
     <h1 class="blog-title">Blogs</h1>
     <div class="blog-list mt-2">
 <!--      <a class="blog mt-4">-->
-<!--        <div class="title">Modular Approach and Jetbrains File Scope</div>-->
-<!--        <div class="date">January 20, 2026</div>-->
-<!--      </a>-->
-<!--      <a class="blog mt-4">-->
 <!--        <div class="title">Git Rebase Auto Stash</div>-->
 <!--        <div class="date">January 18, 2026</div>-->
 <!--      </a>-->
+      <a class="blog mt-4" href="/blogs/tracking-code-duplication-without-obsessing-over-dry">
+        <div class="title">Tracking Code Duplication Without Obsessing Over DRY</div>
+        <div class="date">April 19, 2026</div>
+      </a>
       <a class="blog mt-4" href="/blogs/simple-naming-convention-for-nested-eloquent-closures">
         <div class="title">A Simple Naming Convention for Nested Eloquent Closures</div>
         <div class="date">January 24, 2026</div>
