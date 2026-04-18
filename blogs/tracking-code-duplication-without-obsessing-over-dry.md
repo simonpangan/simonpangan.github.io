@@ -57,7 +57,8 @@ The rule of three pushes back on this instinct: tolerate some duplication, let p
 
 Here’s the real problem with premature abstraction: **once it exists, it sticks**.
 
-You introduce a helper, a service, or some reusable component because you assume it’ll be needed everywhere. Later, someone comes along with a slightly different use case and tries to force it into the existing abstraction—because it’s already there.
+You introduce a helper, a service, or some reusable component because you assume it’ll be needed everywhere. 
+Later, someone comes along with a slightly different use case and tries to force it into the existing abstraction—because it’s already there.
 
 So the abstraction grows: more parameters, more conditions, more edge cases.
 
