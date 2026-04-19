@@ -33,7 +33,7 @@ I used to follow the DRY principle pretty strictly. If I saw duplication, I remo
 I don’t do that anymore.
 
 Over time, I realized DRY is often over-applied especially in architecture. 
-It works well for stable utilities, but forcing it into fast-evolving parts of a system can make code harder to change.
+It works well for utilities, but forcing it into fast-evolving parts of a system can make code harder to change.
 
 Duplication isn’t always the problem. Premature abstraction is.
 
