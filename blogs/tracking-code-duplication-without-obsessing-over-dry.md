@@ -49,7 +49,7 @@ At an architectural level, a bit of duplication can actually improve understandi
 
 There's a simple idea in software design that changed how I write code: **the rule of three**.
 
-If you see something twice, leave it alone. When you see it a third (or even fourth) time, that’s when you start thinking about abstraction.
+If you see something twice, leave it alone. When you see it a third (or even fourth) time, that’s when you start thinking about an abstraction.
 
 As developers, we often assume we know how code will evolve. 
 We design for that imagined future but sometimes that code isn't needed. 
@@ -181,7 +181,7 @@ public function index(): JsonResponse
 This gives me a simple way to search, group, and reason about related code without forcing an abstraction too early. 
 To find duplicates at scale, use your IDE's global search (Cmd+Shift+F on Mac, Ctrl+Shift+F on most others) and search for the UUID.
 
-If you use JetBrains IDEs, the [Randomness](https://plugins.jetbrains.com/plugin/9836-randomness) plugin can generate UUIDs directly in the editor. Use an equivalent extension in other editors.
+If you use a JetBrains IDEs, the [Randomness](https://plugins.jetbrains.com/plugin/9836-randomness) plugin can generate UUIDs directly in the editor. Use an equivalent extension in other editors.
 
 ## Final thoughts
 
