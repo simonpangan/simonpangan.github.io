@@ -179,6 +179,7 @@ public function index(): JsonResponse
 ```
 
 This gives me a simple way to search, group, and reason about related code without forcing an abstraction too early. 
+
 To find duplicates at scale, use your IDE's global search (Cmd+Shift+F on Mac, Ctrl+Shift+F on most others) and search for the UUID.
 
 If you use a JetBrains IDE, the [Randomness](https://plugins.jetbrains.com/plugin/9836-randomness) plugin can generate UUIDs directly in the editor. Use an equivalent extension in other editors.
