@@ -69,17 +69,6 @@ It becomes harder to understand, harder to change, and ironically, less reusable
 A wrong abstraction doesn’t just sit there—it shapes future code in the wrong direction.
 
 
-[//]: # (### Wrong Abstractions Increase Cost of Change)
-
-[//]: # ()
-[//]: # (A poorly chosen abstraction doesn’t just hurt readability—it increases the cost of every future change.)
-
-[//]: # ()
-[//]: # (Every developer who touches that code has to understand it, work around it, and often extend it in ways it wasn’t designed for.)
-
-[//]: # ()
-[//]: # (Fixing it later is possible—but it’s rarely trivial.)
-
 ### Sometimes the Fix Is to Remove the Abstraction
 
 If an abstraction turns out to be wrong, the best move is often to remove it. Reintroduce the duplication. 
@@ -195,7 +184,7 @@ I wait until the pattern stabilizes, the duplication becomes painful, and the ri
 At that point, the abstraction tends to be simpler, more accurate, and easier to maintain.
 Until then, I make duplication visible, give it context, and let it evolve.
 
-Of course, there are exceptions. Critical paths—like security or compliance logic—don’t benefit from this kind of delay.
+Of course, there are exceptions. Security and compliance-critical logic, for example, usually shouldn’t remain duplicated for long.
 
 But for most code, patience leads to better abstractions.
 
