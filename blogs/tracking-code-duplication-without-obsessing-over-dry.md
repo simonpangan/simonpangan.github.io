@@ -127,10 +127,6 @@ private function payload(): array
     
 ### Region-style DUP block
     
-The main benefit here is 
-[code folding](https://www.jetbrains.com/help/phpstorm/working-with-source-code.html#code_folding), 
-plus clearer grouping of duplicated logic inside larger blocks.
-    
 ```php
 
 // PublishedPostsController.php
@@ -161,6 +157,10 @@ public function index(): JsonResponse
     // Some other code...
 }
 ```
+
+The main benefit here is 
+[code folding](https://www.jetbrains.com/help/phpstorm/working-with-source-code.html#code_folding), 
+plus clearer grouping of duplicated logic inside larger blocks.
 
 If you’re using a JetBrains IDE, you can also use 
 [editor-fold](https://www.jetbrains.com/help/phpstorm/code-folding-settings.html#fold-by-default-section:~:text=...%7D%0A%7D-,Custom%20folding%20regions,-Folds%20regions%20that):
