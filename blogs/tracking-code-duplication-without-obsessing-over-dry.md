@@ -129,7 +129,7 @@ The main benefit here is
 plus clearer grouping of duplicated logic inside larger blocks.
     
 ```php
-public function index(): View
+public function index(): JsonResponse
 {
     // Some other code...
 
@@ -143,7 +143,7 @@ public function index(): View
     // Some other code...
 }
 
-public function archive(): View
+public function archive(): JsonResponse
 {
     // region DUP: 119f6849-88b1-48fd-bdb1-1320081e4d2c
     $posts = Post::query()
@@ -160,7 +160,7 @@ If you’re using a JetBrains IDE, you can also use
 [editor-fold](https://www.jetbrains.com/help/phpstorm/code-folding-settings.html#fold-by-default-section:~:text=...%7D%0A%7D-,Custom%20folding%20regions,-Folds%20regions%20that):
 
 ```php
-public function checkout(PaymentData $data): void
+public function index(): JsonResponse
 {
     // Some other code...
         
@@ -186,7 +186,7 @@ I wait until the pattern stabilizes, the duplication becomes painful, and the ri
 At that point, the abstraction tends to be simpler, more accurate, and easier to maintain.
 Until then, I make duplication visible, give it context, and let it evolve.
 
-Of course, I do make exceptions for things like Security and compliance-critical logic those usually shouldn’t remain duplicated for long.
+Of course, I do make exceptions for cases such as Security and compliance-critical logic those usually shouldn’t remain duplicated for long.
 
 But for most code, patience leads to better abstractions.
 
