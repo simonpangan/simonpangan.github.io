@@ -7,7 +7,7 @@ head:
       content: A pragmatic approach to handling code duplication—track it first, refactor later, and avoid premature abstractions.
   - - meta
     - name: keywords
-      content: DRY, code duplication, refactoring, software design, clean code, PHP, Laravel.
+      content: DRY, code duplication, refactoring, software design, clean code, PHP, Laravel
   - - meta
     - property: og:title
       content: Tracking Code Duplication Without Obsessing Over DRY
