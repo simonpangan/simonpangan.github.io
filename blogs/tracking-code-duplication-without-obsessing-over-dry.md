@@ -190,7 +190,7 @@ We need to be less afraid of duplication.
 I still refactor, but not immediately. 
 I wait until the pattern stabilizes, the duplication becomes painful, and the right abstraction is obvious rather than guessed. 
 At that point, the abstraction tends to be simpler, more accurate, and easier to maintain.
-Until then, I make duplication visible, give it context, and let it evolve.
+Until then, I track duplication, give it context, and let it evolve.
 
 Of course, I do make exceptions for cases such as security, compliance-critical logic, and other areas where I feel duplication shouldn’t remain for long.
 
