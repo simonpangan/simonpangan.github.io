@@ -32,7 +32,7 @@ I used to follow the DRY principle pretty strictly. If I saw duplication, I remo
 
 I don’t do that anymore.
 
-Over time, I realized DRY is often over-applied especially in architecture. 
+Over time, I realized DRY is often over-applied, especially in architecture. 
 It works well for utilities, but forcing it into fast-evolving parts of a system can make code harder to change.
 
 Duplication isn’t always the problem. Premature abstraction is.
@@ -54,7 +54,7 @@ If you see something twice, leave it alone. When you see it a third (or even fou
 As developers, we often assume how code will evolve
 We design for that imagined future, but sometimes that code isn't needed. 
 Once an abstraction is in place, it becomes harder to change because we assume that's how it will be used. 
-Additionally, many developers don't stay in a codebase long enough to see it evolve.
+And in many systems, no single developer stays long enough to see how it actually evolves.
 
 The rule of three pushes back on this instinct: tolerate some duplication, let patterns emerge naturally, and **refactor when the shape of the problem is clearer**.
 
@@ -74,7 +74,7 @@ A wrong abstraction doesn’t just sit there—it shapes future code in the wron
 
 ### Sometimes the Fix Is to Remove the Abstraction
 
-If an abstraction turns out to be wrong, the best move is often to remove it. Reintroduce the duplication. 
+If an abstraction turns out to be wrong, the best move is often to remove it and reintroduce the duplication. 
 Let the code breathe again. Then, with better context, decide what the right abstraction should be.
 
 ## How I Track Duplication
