@@ -195,6 +195,8 @@ I wait until the pattern stabilizes, the duplication becomes painful, and the ri
 At that point, the abstraction tends to be simpler, more accurate, and easier to maintain.
 Until then, I make duplication visible, give it context, and let it evolve.
 
-[//]: # (That said, security and compliance-critical logic usually shouldn’t stay duplicated for long.)
+Of course, there are exceptions. Critical paths—like security or compliance logic—don’t benefit from this kind of delay.
+
+But for most code, patience leads to better abstractions.
 
 **Track first. Refactor later.**
