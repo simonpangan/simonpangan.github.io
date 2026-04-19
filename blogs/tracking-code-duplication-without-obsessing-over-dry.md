@@ -79,7 +79,7 @@ Let the code breathe again. Then, with better context, decide what the right abs
 
 ## How I Track Duplication
 
-Instead of removing duplication immediately, I make it visible.
+Instead of removing duplication immediately, I track it.
 
 I mark duplicated logic with a `DUP` comment and a UUID. 
 UUIDs keep identifiers unique without forcing me to invent names.
