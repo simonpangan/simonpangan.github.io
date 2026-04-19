@@ -23,12 +23,12 @@ head:
 ---
 # Tracking Code Duplication Without Obsessing Over DRY
 
-Published on: April 19, 2026
+Published on: April 20, 2026
 
 <hr class="mb-0"/>
 <br />
 
-I used to follow the DRY principle pretty strictly. If I saw duplication, I removed it immediately.
+I used to follow the DRY (Don’t Repeat Yourself) principle pretty strictly. If I saw duplication, I removed it immediately.
 
 I don’t do that anymore.
 
@@ -82,7 +82,7 @@ Let the code breathe again. Then, with better context, decide what the right abs
 Instead of removing duplication immediately, I track it.
 
 I mark duplicated logic with a `DUP` comment and a UUID. 
-UUIDs keep identifiers unique without forcing me to invent names.
+UUIDs keep identifiers unique without forcing me to come up with names for each duplication.
 For larger sections, I wrap them in a region-style block with the same identifier.
 
 ### Single-line DUP tag
@@ -189,9 +189,9 @@ If you use a JetBrains IDE, the [Randomness](https://plugins.jetbrains.com/plugi
 We need to be less afraid of duplication.
 
 I still refactor, but not immediately. 
-I wait until the pattern stabilizes, duplication becomes painful, and the right abstraction is obvious—not guessed.
-At that point, the abstraction tends to be simpler, more accurate, and easier to maintain.
-Until then, I track duplication, give it context, and let it evolve.
+I wait until the pattern stabilizes, the duplication becomes painful, and the right abstraction is obvious—not guessed. 
+At that point, the result tends to be simpler, more accurate, and easier to maintain. 
+Until then, I track duplication, give it context, and let the abstraction emerge naturally.
 
 Of course, I do make exceptions for cases such as security, compliance-critical logic, and other areas where I feel duplication shouldn’t remain for long.
 

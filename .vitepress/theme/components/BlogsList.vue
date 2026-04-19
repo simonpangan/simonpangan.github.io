@@ -12,7 +12,7 @@
 <!--      </a>-->
       <a class="blog mt-4" href="/blogs/tracking-code-duplication-without-obsessing-over-dry">
         <div class="title">Tracking Code Duplication Without Obsessing Over DRY</div>
-        <div class="date">April 19, 2026</div>
+        <div class="date">April 20, 2026</div>
       </a>
       <a class="blog mt-4" href="/blogs/simple-naming-convention-for-nested-eloquent-closures">
         <div class="title">A Simple Naming Convention for Nested Eloquent Closures</div>
