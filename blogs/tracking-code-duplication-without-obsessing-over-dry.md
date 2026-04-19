@@ -85,24 +85,40 @@ For larger sections, I wrap them in a region-style block with the same identifie
 ### Single-line DUP tag
     
 ```php
-public function processPayment(PaymentData $data): void
-{
-    // DUP: 57518c0e-4457-466e-b379-a56d25c59bb9
-    if ($data->amount <= 0 || empty($data->paymentMethod) || !$data->userVerified) {
-        throw new Exception('Invalid payment state');
-    }
 
-    // ...
+//ActivityLogResource.php
+public function toArray(Request $request): array
+{
+    //DUP: 2bc036c1-c80a-49d5-8a90-85850993cb9d
+    return [
+        'id' => $this->id,
+        'name' => $this->module_label,
+        'event' => $this->event_label,
+        'description' => $this->short_description,
+        'user' => $this->when(
+            LogCauser::AUTHENTICATED_USER->equals($this->causer_type),
+            new UserLogResource($this->whenLoaded('causer'))
+        ),
+        'agent' => $this->agent(),
+        'created_at' => $this->created_at->format('d M Y H:i:s'),
+    ];
 }
 
-public function previewPayment(PaymentData $data): array
+//ActivityLogNotification.php
+private function payload(): array
 {
-    // DUP: 57518c0e-4457-466e-b379-a56d25c59bb9
-    if ($data->amount <= 0 || empty($data->paymentMethod) || !$data->userVerified) {
-        throw new Exception('Invalid payment state');
-    }
-
-    // ...
+    //DUP: 2bc036c1-c80a-49d5-8a90-85850993cb9d
+    return [
+        'id' => $this->activityLog->id,
+        'module' => $this->activityLog->module_label,
+        'event' => $this->activityLog->event_label,
+        'description' => $this->activityLog->description,
+        'user' => LogCauser::AUTHENTICATED_USER->equals($this->activityLog->causer_type)
+            ? $this->user($this->activityLog->causer)
+            : null,
+        'agent' => $this->agent(),
+        'created_at' => $this->activityLog->created_at->format('d M Y H:i:s'),
+    ];
 }
 ```
     
