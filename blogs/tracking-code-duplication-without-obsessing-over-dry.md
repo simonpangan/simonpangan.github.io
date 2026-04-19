@@ -129,6 +129,8 @@ The main benefit here is
 plus clearer grouping of duplicated logic inside larger blocks.
     
 ```php
+
+//PublishedPostsController.php
 public function index(): JsonResponse
 {
     // Some other code...
@@ -143,7 +145,8 @@ public function index(): JsonResponse
     // Some other code...
 }
 
-public function archive(): JsonResponse
+//AnotherController.php
+public function index(): JsonResponse
 {
     // region DUP: 119f6849-88b1-48fd-bdb1-1320081e4d2c
     $posts = Post::query()
@@ -186,7 +189,7 @@ I wait until the pattern stabilizes, the duplication becomes painful, and the ri
 At that point, the abstraction tends to be simpler, more accurate, and easier to maintain.
 Until then, I make duplication visible, give it context, and let it evolve.
 
-Of course, I do make exceptions for cases such as Security and compliance-critical logic those usually shouldn’t remain duplicated for long.
+Of course, I do make exceptions for cases such as security, compliance-critical logic, and other areas where I feel duplication shouldn’t remain for long.
 
 But for most code, patience leads to better abstractions.
 
