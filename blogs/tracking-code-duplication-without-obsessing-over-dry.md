@@ -51,7 +51,7 @@ There's a simple idea in software design that changed how I write code: **the ru
 
 If you see something twice, leave it alone. When you see it a third (or even fourth) time, that’s when you start thinking about an abstraction.
 
-As developers, we often assume how code will evolve
+As developers, we often assume how code will evolve.
 We design for that imagined future, but sometimes that code isn't needed. 
 Once an abstraction is in place, it becomes harder to change because we assume that's how it will be used. 
 And in many systems, no single developer stays long enough to see how it actually evolves.
