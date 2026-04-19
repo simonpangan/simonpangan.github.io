@@ -52,7 +52,7 @@ There's a simple idea in software design that changed how I write code: **the ru
 If you see something twice, leave it alone. When you see it a third (or even fourth) time, that’s when you start thinking about an abstraction.
 
 As developers, we often assume we know how code will evolve. 
-We design for that imagined future but sometimes that code isn't needed. 
+We design for that imagined future, but sometimes that code isn't needed. 
 Once an abstraction is in place, it becomes harder to change because we assume that's how it will be used. 
 Additionally, many developers don't stay in a codebase long enough to see it evolve.
 
@@ -183,7 +183,7 @@ To find duplicates at scale, use your IDE's global search (Cmd+Shift+F on Mac, C
 
 If you use a JetBrains IDEs, the [Randomness](https://plugins.jetbrains.com/plugin/9836-randomness) plugin can generate UUIDs directly in the editor. Use an equivalent extension in other editors.
 
-## Final thoughts
+## Final Thoughts
 
 We need to be less afraid of duplication.
 
