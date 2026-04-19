@@ -129,41 +129,27 @@ The main benefit here is
 plus clearer grouping of duplicated logic inside larger blocks.
     
 ```php
-public function checkout(PaymentData $data): void
+public function index(): View
 {
     // Some other code...
 
     // region DUP: 119f6849-88b1-48fd-bdb1-1320081e4d2c
-    if ($data->amount <= 0) {
-        throw new Exception('Invalid amount');
-    }
-
-    if (empty($data->paymentMethod)) {
-        throw new Exception('Payment method required');
-    }
-
-    if (!$data->userVerified) {
-        throw new Exception('User not verified');
-    }
+    $posts = Post::query()
+        ->where('status', 'published')
+        ->latest()
+        ->paginate(10);
     // endregion
 
     // Some other code...
 }
 
-public function retryPayment(PaymentData $data): void
+public function archive(): View
 {
     // region DUP: 119f6849-88b1-48fd-bdb1-1320081e4d2c
-    if ($data->amount <= 0) {
-        throw new Exception('Invalid amount');
-    }
-
-    if (empty($data->paymentMethod)) {
-        throw new Exception('Payment method required');
-    }
-
-    if (!$data->userVerified) {
-        throw new Exception('User not verified');
-    }
+    $posts = Post::query()
+        ->where('status', 'published')
+        ->latest()
+        ->paginate(10);
     // endregion
 
     // Some other code...
@@ -200,7 +186,7 @@ I wait until the pattern stabilizes, the duplication becomes painful, and the ri
 At that point, the abstraction tends to be simpler, more accurate, and easier to maintain.
 Until then, I make duplication visible, give it context, and let it evolve.
 
-Of course, there are exceptions. Security and compliance-critical logic, for example, usually shouldn’t remain duplicated for long.
+Of course, I do make exceptions for things like Security and compliance-critical logic those usually shouldn’t remain duplicated for long.
 
 But for most code, patience leads to better abstractions.
 
