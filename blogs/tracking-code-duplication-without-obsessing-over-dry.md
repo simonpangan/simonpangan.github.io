@@ -89,10 +89,10 @@ For larger sections, I wrap them in a region-style block with the same identifie
     
 ```php
 
-//ActivityLogResource.php
+// ActivityLogResource.php
 public function toArray(Request $request): array
 {
-    //DUP: 2bc036c1-c80a-49d5-8a90-85850993cb9d
+    // DUP: 2bc036c1-c80a-49d5-8a90-85850993cb9d
     return [
         'id' => $this->id,
         'name' => $this->module_label,
@@ -107,15 +107,15 @@ public function toArray(Request $request): array
     ];
 }
 
-//ActivityLogNotification.php
+// ActivityLogNotification.php
 private function payload(): array
 {
-    //DUP: 2bc036c1-c80a-49d5-8a90-85850993cb9d
+    // DUP: 2bc036c1-c80a-49d5-8a90-85850993cb9d
     return [
         'id' => $this->activityLog->id,
-        'module' => $this->activityLog->module_label,
+        'name' => $this->activityLog->module_label,
         'event' => $this->activityLog->event_label,
-        'description' => $this->activityLog->description,
+        'description' => $this->activityLog->short_description,
         'user' => LogCauser::AUTHENTICATED_USER->equals($this->activityLog->causer_type)
             ? $this->user($this->activityLog->causer)
             : null,
@@ -133,7 +133,7 @@ plus clearer grouping of duplicated logic inside larger blocks.
     
 ```php
 
-//PublishedPostsController.php
+// PublishedPostsController.php
 public function index(): JsonResponse
 {
     // Some other code...
@@ -148,7 +148,7 @@ public function index(): JsonResponse
     // Some other code...
 }
 
-//AnotherController.php
+// AnotherController.php
 public function index(): JsonResponse
 {
     // region DUP: 119f6849-88b1-48fd-bdb1-1320081e4d2c
@@ -174,14 +174,14 @@ public function index(): JsonResponse
     // ...
     //</editor-fold>
     
-     // Some other code...
+    // Some other code...
 }
 ```
 
 This gives me a simple way to search, group, and reason about related code without forcing an abstraction too early. 
 To find duplicates at scale, use your IDE's global search (Cmd+Shift+F on Mac, Ctrl+Shift+F on most others) and search for the UUID.
 
-If you use a JetBrains IDEs, the [Randomness](https://plugins.jetbrains.com/plugin/9836-randomness) plugin can generate UUIDs directly in the editor. Use an equivalent extension in other editors.
+If you use a JetBrains IDE, the [Randomness](https://plugins.jetbrains.com/plugin/9836-randomness) plugin can generate UUIDs directly in the editor. Use an equivalent extension in other editors.
 
 ## Final Thoughts
 
