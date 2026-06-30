@@ -16,6 +16,12 @@ export default defineConfig({
         link: 'https://linktr.ee/simonpangan',
         target: '_blank',
         ariaLabel: 'Linktree Link'
+      },
+      {
+        icon: 'linkedin',
+        link: 'https://linkedin.com/in/simonpangan',
+        target: '_blank',
+        ariaLabel: 'LinkedIn Link'
       }
     ],
 
