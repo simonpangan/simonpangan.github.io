@@ -12,8 +12,8 @@
 }
 
 .avatar {
-  border-radius: 50%;
-  border: 5px solid var(--vp-avatar-border);
+  //border-radius: 50%;
+  //border: 5px solid var(--vp-avatar-border);
 }
 
 @keyframes avatar-transform {
