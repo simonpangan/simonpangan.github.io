@@ -106,7 +106,7 @@ public function get(): Collection
         ->get();
 }
 ```
-The main method is now easier to read because the implementation details are moved into separate methods.
+The `get()` method is now easier to read because the implementation details are moved into separate methods.
 
 Those methods contain the actual query logic:
     
@@ -131,8 +131,8 @@ private function joins(Builder $q): void
 
 private function filters(Builder $q): void
 {
-    if ($this->filters->get('region_id')) {
-        $q->where('crew_addresses.region_id', $this->filters['region_id']);
+    if ($this->filters->has('region_id')) {
+        $q->where('crew_addresses.region_id', $this->filters->get('region_id'));
     }
     
     //...
