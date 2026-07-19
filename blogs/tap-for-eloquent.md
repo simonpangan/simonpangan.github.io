@@ -94,7 +94,7 @@ public function execute(): Builder
             $this->filters($q);
         })
         ->orderByRaw('
-            crews.last_name , 
+            crews.last_name, 
             crews.first_name, 
             crews.middle_name
         ');
@@ -133,7 +133,8 @@ private function filters(Builder $q): void
 }
 ```
 
-All of these methods still modify the same query builder. The tap() simply gives us a clean place to organize these sections:
+All of these methods still modify the same query builder. 
+The `tap()` simply gives us a clean place to organize these sections:
 
 ```php
 ->tap(function (Builder $q) {
