@@ -11,7 +11,7 @@
 <!--        <div class="date">January 18, 2026</div>-->
 <!--      </a>-->
       <a class="blog mt-4" href="/blogs/tap-for-eloquent">
-        <div class="title">Breaking down large Laravel queries using tap</div>
+        <div class="title">Organizing large Laravel queries with tap()</div>
         <div class="date">July 18, 2026</div>
       </a>
       <a class="blog mt-4" href="/blogs/tracking-code-duplication-without-obsessing-over-dry">
