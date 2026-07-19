@@ -10,6 +10,10 @@
 <!--        <div class="title">Git Rebase Auto Stash</div>-->
 <!--        <div class="date">January 18, 2026</div>-->
 <!--      </a>-->
+      <a class="blog mt-4" href="/blogs/tap-for-eloquent">
+        <div class="title">Breaking down large Laravel queries using tap</div>
+        <div class="date">July 18, 2026</div>
+      </a>
       <a class="blog mt-4" href="/blogs/tracking-code-duplication-without-obsessing-over-dry">
         <div class="title">Tracking Code Duplication Without Obsessing Over DRY</div>
         <div class="date">April 20, 2026</div>
