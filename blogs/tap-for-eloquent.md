@@ -61,7 +61,11 @@ private function get(): Collection
 
 private function applyFilters(Builder $q): void
 {
-    $q->where('deleted_at', null);
+    if (/* ... */) {
+        $q->whereNull('deleted_at');
+    }
+    
+    //...
 }
 ```
 
@@ -70,7 +74,7 @@ The `tap()` simply gives us a place to organize related query logic.
 
 This becomes useful when the query gets larger.
 
-## **Real-World Example**
+## Real-World Example
 
 Here is an example from a real project.
 
@@ -115,7 +119,7 @@ private function loadRelationships(Builder $q): void
 
 private function joins(Builder $q): void
 {
-   $q->join('crew_addresses', function (JoinClause $qq) {
+    $q->join('crew_addresses', function (JoinClause $qq) {
         $qq->on('crew_addresses.crew_id', '=', 'crews.id');
         //...
     });
