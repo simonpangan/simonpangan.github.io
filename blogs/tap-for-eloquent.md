@@ -31,11 +31,12 @@ Published on: July 18, 2026
 
 Large Laravel queries can become difficult to read. As the query grows, it is common to have relationships, 
 joins, filters, and other conditions all mixed together in one method. 
-Eventually, the query becomes difficult to scan and understand.
+Eventually, the query becomes difficult to read and understand.
 
 There are many ways to organize a large Laravel query.
-You could extract parts of the query into reusable local scopes, 
-create reusable query components, or move the query into a dedicated query class or repository.
+You could extract parts of the query into reusable [local scopes](https://laravel.com/docs/13.x/eloquent#local-scopes), 
+create reusable [query components](https://laravel.com/docs/13.x/queries#reusable-query-components), 
+or move the query into a dedicated query class or repository.
 
 These approaches can all be useful depending on the situation.
 But sometimes, you don't need another abstraction. 
@@ -113,7 +114,7 @@ public function get(): Collection
         ->get();
 }
 ```
-The `get()` method is now easier to scan because the implementation details are moved into separate methods.
+The `get()` method is now easier to read because the implementation details are moved into separate methods.
 
 Those methods contain the actual query logic:
     
