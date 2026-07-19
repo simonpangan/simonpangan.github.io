@@ -1,5 +1,5 @@
 ---
-title: Breaking Down Large Laravel Queries Using tap()
+title: Organizing large Laravel queries with tap()
 aside: false
 head:
   - - meta
@@ -10,7 +10,7 @@ head:
       content: Laravel, Eloquent, Query Builder, PHP, tap, clean code, readability
   - - meta
     - property: og:title
-      content: Breaking Down Large Laravel Queries Using tap()
+      content: Organizing large Laravel queries with tap()
   - - meta
     - property: og:description
       content: A simple way to organize large Laravel queries by using tap() to separate relationships, joins, and filters into clear sections.
@@ -22,26 +22,22 @@ head:
       content: summary
 ---
 
-# Breaking down large Laravel queries using tap
+# Organizing large Laravel queries with tap()
 
 Published on: July 18, 2026
 
 <hr class="mb-0"/>
 <br />
 
-Large Laravel queries can become difficult to read.
-
-As the query grows, it is common to have relationships, 
+Large Laravel queries can become difficult to read. As the query grows, it is common to have relationships, 
 joins, filters, and other conditions all mixed together in one method. 
 Eventually, the query becomes difficult to scan and understand.
 
 There are many ways to organize a large Laravel query.
-
 You could extract parts of the query into reusable local scopes, 
 create reusable query components, or move the query into a dedicated query class or repository.
 
 These approaches can all be useful depending on the situation.
-
 But sometimes, you don't need another abstraction. 
 Sometimes, you simply want to keep the query together while making the code easier to read.
 
@@ -69,8 +65,7 @@ private function applyFilters(Builder $q): void
 }
 ```
 
-The query is still built as one continuous query.
-
+The query is still built as one continuous query. 
 The `tap()` simply gives us a place to organize related query logic.
 
 This becomes useful when the query gets larger.
@@ -108,6 +103,7 @@ public function execute(): Builder
 The main method is now easier to read because the implementation details are moved into separate methods.
 
 Those methods contain the actual query logic:
+    
 ```php
 private function loadRelationships(Builder $q): void
 {
@@ -137,9 +133,7 @@ private function filters(Builder $q): void
 }
 ```
 
-All of these methods still modify the same query builder.
-
-The `tap()` simply gives us a clean place to organize these sections:
+All of these methods still modify the same query builder. The tap() simply gives us a clean place to organize these sections:
 
 ```php
 ->tap(function (Builder $q) {
@@ -153,8 +147,7 @@ The `tap()` simply gives us a clean place to organize these sections:
 
 There are many ways to organize large Laravel queries, and `tap()` is just one of them.
 
-You don't always need another abstraction to organize a large query.
-
+You don't always need another abstraction to organize a large query. 
 Sometimes, you can keep the query together and use `tap()` to separate its different parts.
 
 The main query stays easy to read, while the more complicated relationships, joins, and filters are moved into their own methods.
