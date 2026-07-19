@@ -45,7 +45,7 @@ This is where Laravel's `tap()` method can be useful.
 
 ## The Idea
 
-Laravel's tap() method lets you pass the current query builder to a closure, 
+Laravel's `tap()` method lets you pass the current query builder to a closure, 
 perform additional operations on it, 
 and then continue chaining on the same builder.
 
@@ -81,7 +81,7 @@ This becomes useful when the query gets larger.
 Here is an example from a real project.
 
 Instead of putting relationships, joins, and filters directly inside the main method, 
-I use `tap()` group eager loading, joins, and filters:
+I use `tap()` to group eager loading, joins, and filters:
  
 ```php
 public function get(): Collection
