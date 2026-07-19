@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <img src="/assets/img/avatar.png" width="135" height="135" class="avatar" />
+    <img src="/assets/img/avatar.jpg" width="135" height="135" class="avatar" />
   </div>
 </template>
 
@@ -12,8 +12,8 @@
 }
 
 .avatar {
-  //border-radius: 50%;
-  //border: 5px solid var(--vp-avatar-border);
+  border-radius: 50%;
+  border: 5px solid var(--vp-avatar-border);
 }
 
 @keyframes avatar-transform {
