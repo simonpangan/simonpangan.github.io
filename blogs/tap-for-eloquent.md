@@ -93,7 +93,7 @@ public function execute(): Builder
         })
         ->hasAtleastOneConfirmedCrewChange()
         ->tap(function (Builder $q) {
-            $this->loadRelationships($q);
+            $this->relationships($q);
             $this->joins($q);
             $this->filters($q);
         })
@@ -109,7 +109,7 @@ The main method is now easier to read because the implementation details are mov
 Those methods contain the actual query logic:
     
 ```php
-private function loadRelationships(Builder $q): void
+private function relationships(Builder $q): void
 {
     $q->with([
         'rank:id,alias',
@@ -142,7 +142,7 @@ The `tap()` simply gives us a clean place to organize these sections:
 
 ```php
 ->tap(function (Builder $q) {
-    $this->loadRelationships($q);
+    $this->relationships($q);
     $this->joins($q);
     $this->filters($q);
 })
