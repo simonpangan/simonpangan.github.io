@@ -88,7 +88,7 @@ This becomes useful when the query gets larger.
 
 Here is an example from a real project.
 
-Instead of putting relationships, joins, and filters directly inside the main method, 
+Instead of putting relationships, joins, and filters directly inside the `get()` method, 
 I use `tap()` to group eager loading, joins, and filters:
  
 ```php
