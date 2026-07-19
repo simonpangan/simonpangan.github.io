@@ -45,7 +45,9 @@ This is where Laravel's `tap()` method can be useful.
 
 ## The Idea
 
-Laravel's `tap()` method lets you pass the current query builder into a closure and continue building the same query.
+Laravel's tap() method lets you pass the current query builder to a closure, 
+perform additional operations on it, 
+and then continue chaining on the same builder.
 
 For example:
 ```php
@@ -55,7 +57,6 @@ private function get(): Collection
         ->where('active', true)
         ->tap(function (Builder $q) {
             $this->filters($q);
-            $this->anotherMethod($q);
         })
         ->get();
 }
@@ -68,15 +69,10 @@ private function filters(Builder $q): void
     
     //...
 }
-
-private function anotherMethod(Builder $q): void
-{
-    //...
-}
 ```
 
 The query is still built as one continuous query. 
-The `tap()` simply gives us a place to organize related query logic.
+`tap()` gives us a place to group additional query modifications without interrupting the chain.
 
 This becomes useful when the query gets larger.
 
@@ -85,17 +81,17 @@ This becomes useful when the query gets larger.
 Here is an example from a real project.
 
 Instead of putting relationships, joins, and filters directly inside the main method, 
-I use `tap()` to group them:
+I use `tap()` group eager loading, joins, and filters:
  
 ```php
-public function execute(): Builder
+public function get(): Collection
 {
     return Crew::query()
         ->select($this->select())
         ->where(function (Builder $q) {
             $q->active()
-            ->alive()
-            ->noWithdrawal();
+                ->alive()
+                ->noWithdrawal();
         })
         ->tap(function (Builder $q) {
             $this->withRelationships($q);
@@ -106,7 +102,8 @@ public function execute(): Builder
             crews.last_name, 
             crews.first_name, 
             crews.middle_name
-        ');
+        ')
+        ->get();
 }
 ```
 The main method is now easier to read because the implementation details are moved into separate methods.
