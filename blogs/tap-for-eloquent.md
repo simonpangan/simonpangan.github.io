@@ -102,7 +102,7 @@ public function get(): Collection
                 ->noWithdrawal();
         })
         ->tap(function (Builder $q) {
-            $this->withRelationships($q);
+            $this->relationships($q);
             $this->joins($q);
             $this->filters($q);
         })
@@ -119,7 +119,7 @@ The `get()` method is now easier to read because the implementation details are 
 Those methods contain the actual query logic:
     
 ```php
-private function withRelationships(Builder $q): void
+private function relationships(Builder $q): void
 {
     $q->with([
         'rank:id,alias',
@@ -152,7 +152,7 @@ The `tap()` simply gives us a clean place to organize these sections:
 
 ```php
 ->tap(function (Builder $q) {
-    $this->withRelationships($q);
+    $this->relationships($q);
     $this->joins($q);
     $this->filters($q);
 })
@@ -167,4 +167,4 @@ Sometimes, you can keep the query together and use `tap()` to group its differen
 
 The main query stays easy to read, while the more complicated relationships, joins, and filters are moved into their own methods.
 
-For me, that's the main value of this pattern. The query remains one query, but the code becomes easier to read and maintain.
+For me, that's the main value of this pattern. The query stays as a single query while, at the same time, the code becomes easier to read, understand, and maintain.
