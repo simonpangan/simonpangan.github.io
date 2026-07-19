@@ -72,7 +72,7 @@ private function filters(Builder $q): void
     //...
 }
 
-private function filters(Builder $q): void
+private function joins(Builder $q): void
 {
     //...
 }
