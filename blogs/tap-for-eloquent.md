@@ -79,7 +79,7 @@ private function joins(Builder $q): void
 ```
 
 The query is still built using the same query builder instance and remains part of the same fluent chain.
-`tap()` gives us a place to group additional query modifications without interrupting the chain.
+`tap()` gives us a place to group related query modifications without interrupting the chain.
 
 This becomes useful when the query gets larger.
 
@@ -113,7 +113,7 @@ public function get(): Collection
         ->get();
 }
 ```
-The `get()` method is now easier to read because the implementation details are moved into separate methods.
+The `get()` method is now easier to scan because the implementation details are moved into separate methods.
 
 Those methods contain the actual query logic:
     
