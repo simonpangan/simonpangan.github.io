@@ -41,7 +41,8 @@ These approaches can all be useful depending on the situation.
 But sometimes, you don't need another abstraction. 
 Sometimes, you simply want to keep the query together while making the code easier to read.
 
-This is where Laravel's `tap()` method can be useful.
+This is where Laravel's `tap()` method can be useful as a way 
+to group related query modifications without breaking the fluent chain.
 
 ## The Idea
 
@@ -57,6 +58,7 @@ private function get(): Collection
         ->where('active', true)
         ->tap(function (Builder $q) {
             $this->filters($q);
+            $this->joins($q);
         })
         ->get();
 }
@@ -69,9 +71,14 @@ private function filters(Builder $q): void
     
     //...
 }
+
+private function filters(Builder $q): void
+{
+    //...
+}
 ```
 
-The query is still built as one continuous query. 
+The query is still built using the same query builder instance and remains part of the same fluent chain.
 `tap()` gives us a place to group additional query modifications without interrupting the chain.
 
 This becomes useful when the query gets larger.
@@ -155,7 +162,7 @@ The `tap()` simply gives us a clean place to organize these sections:
 There are many ways to organize large Laravel queries, and `tap()` is just one of them.
 
 You don't always need another abstraction to organize a large query. 
-Sometimes, you can keep the query together and use `tap()` to organize its different parts.
+Sometimes, you can keep the query together and use `tap()` to group its different parts.
 
 The main query stays easy to read, while the more complicated relationships, joins, and filters are moved into their own methods.
 
