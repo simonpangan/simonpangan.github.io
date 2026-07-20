@@ -10,7 +10,7 @@
 <!--        <div class="title">Git Rebase Auto Stash</div>-->
 <!--        <div class="date">January 18, 2026</div>-->
 <!--      </a>-->
-      <a class="blog mt-4" href="/blogs/tap-for-eloquent">
+      <a class="blog mt-4" href="/blogs/organizing-large-laravel-queries-with-tap">
         <div class="title">Organizing large Laravel queries with tap()</div>
         <div class="date">July 18, 2026</div>
       </a>
