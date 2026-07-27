@@ -22,6 +22,10 @@
         <div class="title">A Simple Naming Convention for Nested Eloquent Closures</div>
         <div class="date">January 24, 2026</div>
       </a>
+      <a class="blog mt-4" href="/blogs/graduation">
+        <div class="title">From Thesis Delays to Celebrating Success</div>
+        <div class="date">August 15, 2023</div>
+      </a>
     </div>
   </div>
 </template>
