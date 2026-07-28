@@ -8,6 +8,7 @@ export default defineConfig({
     siteTitle: false,
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'Contact', link: '/contact' },
     ],
 
     socialLinks: [
