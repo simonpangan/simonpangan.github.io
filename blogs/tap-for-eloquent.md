@@ -22,7 +22,7 @@ head:
       content: summary
 ---
 
-# Organizing large Laravel queries with tap()
+# Organizing large Laravel queries with `tap()`
 
 Published on: July 18, 2026
 
@@ -168,3 +168,7 @@ Sometimes, you can keep the query together and use `tap()` to group its differen
 The main query stays easy to read, while the more complicated relationships, joins, and filters are moved into their own methods.
 
 For me, that's the main value of this pattern. The query stays as a single query while, at the same time, the code becomes easier to read, understand, and maintain.
+
+---
+
+> **Update:** Since publishing this article, I've found a more concise way to use this pattern with PHP's first-class callable syntax. [Read the follow-up →](/blogs/using-first-class-callables-with-laravel-tap)
