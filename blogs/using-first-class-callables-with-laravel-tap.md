@@ -1,5 +1,5 @@
 ---
-title: Using first-class callables with Laravel's `tap()`
+title: Using PHP's first-class callables with Laravel's `tap()`
 aside: false
 head:
   - - meta
@@ -22,14 +22,16 @@ head:
       content: summary
 ---
 
-# Using first-class callables with Laravel's `tap()`
+# Using PHP's first-class callables with Laravel's `tap()`
 
 Published on: August 23, 2026
 
 <hr class="mb-0"/>
 <br />
 
-A while back, I wrote about [using `tap()` to organize large Laravel queries](/blogs/organizing-large-laravel-queries-with-tap).
+A while back, I wrote about [using
+`tap()` to organize large Laravel queries](/blogs/organizing-large-laravel-queries-with-tap).
+
 The idea was simple: instead of mixing relationships, joins, and filters into one big query method,
 use `tap()` to group them into separate, well-named methods without breaking the fluent chain.
 
@@ -38,7 +40,7 @@ first-class callable syntax instead of wrapping them in a closure.
 
 ## A quick recap
 
-In the original approach, `tap()` took a closure, and the closure called out to other methods:
+In the original approach, `tap()` took a closure, and the closure called the other methods:
 
 ```php
 ->tap(function (Builder $q) {
@@ -52,10 +54,9 @@ several method calls into a single `tap()`.
 
 ## Using first-class callable syntax
 
-PHP 8.1 introduced [first-class callable syntax](https://www.php.net/manual/en/functions.first_class_callable_syntax.php),
-which lets you reference a method as a callable using `(...)`, without wrapping it in a closure.
-
-Since `tap()` just needs a callable, this means you can pass the method directly:
+When each `tap()` only needs to call a single method,
+[PHP 8.1's first-class callable syntax](https://php.watch/versions/8.1/first-class-callable-syntax) 
+lets you skip the closure entirely and pass the method straight in:
 
 ```php
 public function get(): Collection
@@ -106,6 +107,23 @@ private function filters(Builder $q): void
 }
 ```
 
-No closure, no extra indentation level, just the method reference itself. `$this->joins(...)` is
-shorthand for "give me a callable pointing to this instance's `joins` method," and Laravel's `tap()`
-happily accepts it, since it works with any `callable`, not specifically a `Closure`.
+So this:
+
+```php
+->tap($this->joins(...))
+```
+
+is effectively the same as:
+
+```php
+->tap(function (Builder $q) { 
+    $this->joins($q); 
+})
+```
+The first-class callable syntax wraps the method in a closure, which `tap()` can then use as its callback.
+
+For me, the first-class callable version is a small improvement when each `tap()` maps directly to a single method. 
+It removes a bit of boilerplate while keeping the query easy to scan.
+
+The trade-off is that a first-class callable can only point to one method. 
+As soon as a step needs to call more than one, like in the recap above, a closure is still the way to go.
