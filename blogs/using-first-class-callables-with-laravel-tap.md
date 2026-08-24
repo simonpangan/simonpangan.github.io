@@ -24,7 +24,7 @@ head:
 
 # Using PHP's first-class callables with Laravel's `tap()`
 
-Published on: August 23, 2026
+Published on: August 25, 2026
 
 <hr class="mb-0"/>
 <br />
