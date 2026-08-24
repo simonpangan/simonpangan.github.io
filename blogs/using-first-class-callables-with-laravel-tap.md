@@ -55,7 +55,7 @@ several method calls into a single `tap()`.
 ## Using first-class callable syntax
 
 When each `tap()` only needs to call a single method,
-[PHP 8.1's first-class callable syntax](https://php.watch/versions/8.1/first-class-callable-syntax) 
+PHP 8.1's first-class callable syntax 
 lets you skip the closure entirely and pass the method straight in:
 
 ```php
@@ -122,8 +122,7 @@ is effectively the same as:
 ```
 The first-class callable syntax wraps the method in a closure, which `tap()` can then use as its callback.
 
-For me, the first-class callable version is a small improvement when each `tap()` maps directly to a single method. 
-It removes a bit of boilerplate while keeping the query easy to scan.
+It's a small improvement, but it removes some boilerplate while keeping the query easy to scan.
 
-The trade-off is that a first-class callable can only point to one method. 
-As soon as a step needs to call more than one, like in the recap above, a closure is still the way to go.
+If you want to learn more about PHP's first-class callable syntax, [PHP Watch](https://php.watch/versions/8.1/first-class-callable-syntax) has a good overview, 
+including its limitations and edge cases.
