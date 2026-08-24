@@ -11,7 +11,7 @@
 <!--        <div class="date">January 18, 2026</div>-->
 <!--      </a>-->
       <a class="blog mt-4" href="/blogs/using-first-class-callables-with-laravel-tap">
-        <div class="title">Using first-class callables with Laravel's tap()</div>
+        <div class="title">Using PHP's first-class callables with Laravel's tap()</div>
         <div class="date">August 23, 2026</div>
       </a>
       <a class="blog mt-4" href="/blogs/organizing-large-laravel-queries-with-tap">
