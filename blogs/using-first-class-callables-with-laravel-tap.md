@@ -10,7 +10,7 @@ head:
       content: Laravel, Eloquent, Query Builder, PHP, tap, first-class callables, clean code, readability
   - - meta
     - property: og:title
-      content: Using first-class callables with Laravel's tap()
+      content:  Using PHP's first-class callables with Laravel's `tap()`
   - - meta
     - property: og:description
       content: Use PHP's first-class callable syntax with Laravel's tap() to make large Eloquent queries cleaner and easier to read.
