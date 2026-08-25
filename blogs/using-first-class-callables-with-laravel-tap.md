@@ -55,8 +55,7 @@ several method calls into a single `tap()`.
 ## Using first-class callable syntax
 
 When each `tap()` only needs to call a single method,
-PHP 8.1's first-class callable syntax 
-lets you skip the closure entirely and pass the method straight in:
+PHP 8.1's first-class callable syntax lets you skip writing the closure and pass the method straight in.
 
 ```php
 public function get(): Collection
