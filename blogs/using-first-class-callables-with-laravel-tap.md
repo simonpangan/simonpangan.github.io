@@ -123,5 +123,35 @@ The first-class callable syntax wraps the method in a closure, which `tap()` can
 
 It's a small improvement, but it removes some boilerplate while keeping the query easy to scan.
 
+## Watch out for extra arguments
+
+`relationships()`, `joins()`, and `filters()` all get away with `$this->method(...)` because none
+of them need anything beyond the builder. If one of them did — say `filters()` needed a `RequestFilters`
+value passed down from the caller — it breaks:
+
+```php
+private function filters(Builder $q, RequestFilters $filters): void
+{
+    if ($filters->has('region_id')) {
+        $q->where('crew_addresses.region_id', $filters->get('region_id'));
+    }
+}
+
+->tap($this->filters(...)) // ArgumentCountError
+```
+
+`tap()` calls its callback with exactly one argument — the builder. Since first-class callable
+syntax just copies the method's signature as-is, the second parameter has nothing to fill it, and
+PHP throws.
+
+An inline closure handles it without issue:
+
+```php
+->tap(fn (Builder $q) => $this->filters($q, $filters))
+```
+
+So the syntax is a nice shortcut for any method that only needs the builder — but the moment one
+needs more, you're back to a closure.
+
 If you want to learn more about PHP's first-class callable syntax, [PHP Watch](https://php.watch/versions/8.1/first-class-callable-syntax) has a good overview, 
 including its limitations and edge cases.
