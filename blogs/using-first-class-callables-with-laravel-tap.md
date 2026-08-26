@@ -141,8 +141,8 @@ private function filters(Builder $q, RequestFilters $filters): void
 ```
 
 `tap()` calls its callback with exactly one argument — the builder. Since first-class callable
-syntax just copies the method's signature as-is, the second parameter has nothing to fill it, and
-PHP throws.
+syntax just copies the method's signature as-is, there's nothing to fill the second parameter with, and
+PHP throws an error.
 
 An inline closure handles it without issue:
 
