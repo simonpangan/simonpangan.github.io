@@ -6,10 +6,11 @@
   <div class="container mx-auto mt-5">
     <h1 class="blog-title">Blogs</h1>
     <div class="blog-list mt-2">
-<!--      <a class="blog mt-4">-->
-<!--        <div class="title">Git Rebase Auto Stash</div>-->
-<!--        <div class="date">January 18, 2026</div>-->
-<!--      </a>-->
+
+      <a class="blog mt-4" href="/blogs/stricter-laravel-defaults">
+        <div class="title">Stricter Laravel Defaults</div>
+        <div class="date">September 17, 2026</div>
+      </a>
       <a class="blog mt-4" href="/blogs/using-first-class-callables-with-laravel-tap">
         <div class="title">Using PHP's first-class callables with Laravel's tap()</div>
         <div class="date">August 25, 2026</div>
