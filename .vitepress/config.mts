@@ -23,6 +23,12 @@ export default defineConfig({
                 link: 'https://linkedin.com/in/simonpangan',
                 target: '_blank',
                 ariaLabel: 'LinkedIn Link'
+            },
+            {
+                icon: 'twitter',
+                link: 'https://x.com/simonpangan_',
+                target: '_blank',
+                ariaLabel: 'Twitter Link'
             }
         ],
 
